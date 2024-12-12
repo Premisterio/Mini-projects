@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: linear-gradient(90deg, hsl(222, 43%, 51%) 0%, #182848 100%);
+}
+
+h1 {
+    text-align: center;
+    color: #000;
+
+}
+
+form {
+
+    background-color: hsl(205, 43%, 51%);
+    margin: 2em 1em 1em;
+}
