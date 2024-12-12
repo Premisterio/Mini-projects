@@ -52,13 +52,15 @@ textarea {
 /* Style for radio label */
 .radio-btn {
     width: 80;
-    text-align: center;
-    display: inline-block;
-    border: 2px solid black;
+    display: block;
 }
 
+/* Radio buttons */
 .radio-btn > input {
     display: inline;
+    width: auto;
+    min-height: auto;
+    
 }
 
 /* Separator */
