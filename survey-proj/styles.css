@@ -1,21 +1,40 @@
+/* css reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* background color gradient */
 html {
     background: linear-gradient(90deg, hsl(222, 43%, 51%) 0%, #182848 100%);
 }
 
-h1 {
-    text-align: center;
-    color: #000;
-
+/* Feedback Survey Form */
+#title {
+    color: yellow;
 }
 
-form {
+/* Message below the header 1 */
+#description {
+    color: #0F0;
+}
 
+/* Body of the form */
+#survey-form {
+    padding: 0.2em 1em 1em;
     background-color: hsl(205, 43%, 51%);
-    margin: 2em 1em 1em;
+    margin: 1em 1em 1em;
+}
+
+input,
+textarea {
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2.2em;
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0;
 }
