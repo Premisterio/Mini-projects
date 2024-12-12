@@ -19,7 +19,7 @@ html {
     margin-bottom: 0.2em;
 }
 
-/* Message below the header 1 */
+/* Description */
 #description {
     color: hsl(205, 90%, 70%);
     text-align: center;
@@ -43,8 +43,30 @@ textarea {
     margin: 0.5em 0;
     width: 100%;
     min-height: 2em;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 10px;
+
 }
 
+/* Style for radio label */
+.radio-btn {
+    width: 80;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid black;
+}
+
+.radio-btn > input {
+    display: inline;
+}
+
+/* Separator */
+hr{
+    margin: 1em 0 1em 0 ;
+}
+
+/* Checkbox style */
 .checkbox {
     width: 5%;
     min-height: 1.5em;
@@ -55,6 +77,14 @@ textarea {
 label {
     display: block;
     margin: 0.5rem 0;
+}
+
+/* CSS for checkbox label */
+.checkbox-lbl {
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
 }
 
 /* Submit button */
@@ -80,16 +110,6 @@ input[type="submit"]:active {
     background-color: hsl(133, 50%, 30%);
     color: #FFF;
 }
-
-/* CSS for checkbox label */
-.checkbox-lbl {
-    margin: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
-
-
 
 /* Footer */
 .footer-p,

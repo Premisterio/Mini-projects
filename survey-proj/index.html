@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <h1 id="title">Feedback Survey Form</h1>
-    <p id="description">Thank your for filling out this form</p>
+    <h1 id="title">Feedback Form</h1>
     <p id="description">Your Feedback is important to us!</p>
 </head>
 
@@ -34,8 +33,8 @@
         </label>
 
         <label for="bio">
-            Write a short bio (optional):
-            <textarea name="bio" id="bio" rows="6" placeholder="My name is John and I study Art ... " maxlength="500"></textarea>
+            Your Feedback:
+            <textarea name="bio" id="bio" rows="6" placeholder="Enter your feedback here" maxlength="500"></textarea>
         </label>
 
         <label>
@@ -49,6 +48,25 @@
                 <option value="5">Other</option>
             </select>
         </label>
+
+        <!-- radio btn -->  
+        <legend>Would you recommend our website to a friend? </legend>
+        <label for="radio-btn" class="radio-btn">
+            Not sure
+            <input type="radio" name="radio-btn" id="radiobtn1" value="1">
+        </label>
+
+        <label for="radio-btn" class="radio-btn">
+            Maybe 
+            <input type="radio" name="radio-btn" id="radiobtn2" value="2">
+        </label>
+        <label for="radio-btn" class="radio-btn">
+            Totally!
+            <input type="radio" name="radio-btn" id="radiobtn3" value="3" checked>
+        </label>
+        <!-- radio btn -->
+        
+        <hr>
 
         <label for="checkbox1" class="checkbox-lbl">
             <input class="checkbox" id="checkbox1" type="checkbox" name="checkbox1" value="1" /> I want to subscribe to
@@ -64,17 +82,6 @@
 
     </form>
 </body>
-
-<!-- // запущені тести
-34. Ви повинні мати щонайменше два елементи input з type зі значенням radio (радіокнопки).
-35. Ви повинні мати щонайменше дві радіокнопки, які є нащадками #survey-form.
-36. Всі радіокнопки повинні мати атрибут value та значення.
-37. Всі радіокнопки повинні мати атрибут name та значення.
-38. В кожній групі радіокнопок повинно бути щонайменше 2 радіокнопки.
-42. Ви повинні мати елемент input або button з id зі значенням submit.
-43. Ваш #submit повинен мати type зі значенням submit.
-44. Ваш #submit повинен бути нащадком #survey-form.
-// виконані тести -->
 
 <footer>
     <p class="footer-p">
