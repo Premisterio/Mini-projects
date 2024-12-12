@@ -31,7 +31,8 @@ html {
     padding: 0.2em 1em 1em;
     background-color: hsla(205, 43%, 51%, 80%);
     color: #FFF;
-    margin: 1em 1em 1em;
+    margin: 1em auto;
+    max-width: 40em;
     border-radius: 0.5em;
 }
 
@@ -39,7 +40,6 @@ html {
 #dropdown,
 input,
 textarea {
-    color: hsl(190, 67%, 25%);
     margin: 0.5em 0;
     width: 100%;
     min-height: 2em;
@@ -67,19 +67,28 @@ input[type="submit"] {
     height: 2em;
     font-size: 1.1rem;
     color: #FFF;
-    background-color: hsl(133, 71%, 55%);
+    background-color: hsl(133, 50%, 50%);
     min-width: 17em;
 }
 
 input[type="submit"]:hover {
-    background-color: rgb(170, 255, 0);
-    color: black;
+    background-color: hsl(133, 50%, 40%);
+    color: #FFF;
 }
 
 input[type="submit"]:active {
-    background-color: rgb(255, 100, 0);
-    color: black;
+    background-color: hsl(133, 50%, 30%);
+    color: #FFF;
 }
+
+/* CSS for checkbox label */
+.checkbox-lbl {
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
 
 
 /* Footer */

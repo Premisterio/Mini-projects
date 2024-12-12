@@ -14,28 +14,28 @@
 <body>
     <form id="survey-form">
         <label id="name-label" for="name">
-            Enter your name:
-            <input id="name" type="text" name="surname" placeholder="Type here" required>
+            Name:
+            <input id="name" type="text" name="surname" placeholder="Your name" required>
         </label>
 
         <label id="surname-label" for="surname">
-            Enter your surname:
-            <input type="text" name="surname" id="surname" placeholder="Type here" required>
+            Surname:
+            <input type="text" name="surname" id="surname" placeholder="Your surname" required>
         </label>
 
         <label id="email-label" for="email">
-            Enter your email:
+            Email:
             <input type="email" name="email" id="email" placeholder="example@gmail.com" min="3" max="254" required>
         </label>
 
         <label id="number-label" for="number">
-            Enter your age:
+            Age:
             <input id="number" type="number" placeholder="13 - 130" min="13" max="130" required>
         </label>
 
         <label for="bio">
-            Write a short paragraph about yourself:
-            <textarea name="bio" id="bio" rows="5" cols="5" placeholder="Type here (optional)"></textarea>
+            Write a short bio (optional):
+            <textarea name="bio" id="bio" rows="6" placeholder="My name is John and I study Art ... " maxlength="500"></textarea>
         </label>
 
         <label>
@@ -50,19 +50,17 @@
             </select>
         </label>
 
-        <!-- Finish checkbox -->
-
-        <label for="checkbox1">
+        <label for="checkbox1" class="checkbox-lbl">
             <input class="checkbox" id="checkbox1" type="checkbox" name="checkbox1" value="1" /> I want to subscribe to
             the newsletter </a>
         </label>
 
-        <label for="checkbox2">
+        <label for="checkbox2" class="checkbox-lbl">
             <input class="checkbox" id="checkbox2" type="checkbox" name="terms-and-conditions" value="2" required /> I
             accept the terms and conditions</a>
         </label>
 
-        <input type="submit" value="Submit" />
+        <input id="submit" type="submit" value="Submit" />
 
     </form>
 </body>
