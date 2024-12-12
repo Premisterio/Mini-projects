@@ -1,40 +1,99 @@
-/* css reset */
+/* CSS Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* background color gradient */
+/* Background color gradient */
 html {
     background: linear-gradient(90deg, hsl(222, 43%, 51%) 0%, #182848 100%);
 }
 
-/* Feedback Survey Form */
+/* Title style */
 #title {
-    color: yellow;
+    color: hsl(205, 96%, 90%);
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 0.2em;
 }
 
 /* Message below the header 1 */
 #description {
-    color: #0F0;
+    color: hsl(205, 90%, 70%);
+    text-align: center;
+    font-size: 1.3em;
 }
 
 /* Body of the form */
 #survey-form {
     padding: 0.2em 1em 1em;
-    background-color: hsl(205, 43%, 51%);
+    background-color: hsla(205, 43%, 51%, 80%);
+    color: #FFF;
     margin: 1em 1em 1em;
+    border-radius: 0.5em;
 }
 
+/* Styles input areas */
+#dropdown,
 input,
 textarea {
-    margin: 10px 0 0 0;
+    color: hsl(190, 67%, 25%);
+    margin: 0.5em 0;
     width: 100%;
-    min-height: 2.2em;
+    min-height: 2em;
 }
 
+.checkbox {
+    width: 5%;
+    min-height: 1.5em;
+    margin: 0;
+}
+
+/* Creates space between labels */
 label {
     display: block;
     margin: 0.5rem 0;
+}
+
+/* Submit button */
+input[type="submit"] {
+    display: block;
+    border: none;
+    border-radius: 0.2em;
+    width: 60%;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    color: #FFF;
+    background-color: hsl(133, 71%, 55%);
+    min-width: 17em;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(170, 255, 0);
+    color: black;
+}
+
+input[type="submit"]:active {
+    background-color: rgb(255, 100, 0);
+    color: black;
+}
+
+
+/* Footer */
+.footer-p,
+.footer-a {
+    font-family: monospace;
+    color: #EEE;
+    text-align: center;
+}
+
+.footer-a:hover {
+    color: rgb(170, 255, 0);
+}
+
+.footer-a:active {
+    color: rgb(255, 100, 0);
 }

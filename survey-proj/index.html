@@ -11,45 +11,77 @@
     <p id="description">Your Feedback is important to us!</p>
 </head>
 
-
 <body>
     <form id="survey-form">
-        <label for="name">
+        <label id="name-label" for="name">
             Enter your name:
-            <input id="name" type="text" name="surname" placeholder="Type here">
+            <input id="name" type="text" name="surname" placeholder="Type here" required>
         </label>
 
-        <label for="surname">
+        <label id="surname-label" for="surname">
             Enter your surname:
             <input type="text" name="surname" id="surname" placeholder="Type here" required>
         </label>
 
-        <label for="email">
+        <label id="email-label" for="email">
             Enter your email:
-            <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+            <input type="email" name="email" id="email" placeholder="example@gmail.com" min="3" max="254" required>
         </label>
 
-        <label for="number">
+        <label id="number-label" for="number">
             Enter your age:
             <input id="number" type="number" placeholder="13 - 130" min="13" max="130" required>
         </label>
 
         <label for="bio">
             Write a short paragraph about yourself:
-            <textarea name="bio" id="bio" rows="5" cols="5"
-                placeholder="My name is John and I'm passionate about creating websites :D">
-            </textarea>
-
+            <textarea name="bio" id="bio" rows="5" cols="5" placeholder="Type here (optional)"></textarea>
         </label>
 
+        <label>
+            How did you hear about us?
+            <select name="select" id="dropdown" required>
+                <option value="">Select one</option>
+                <option value="1">Friend or Coworker</option>
+                <option value="2">Social Media</option>
+                <option value="3">Advertisement</option>
+                <option value="4">Blog or Forum</option>
+                <option value="5">Other</option>
+            </select>
+        </label>
+
+        <!-- Finish checkbox -->
+
+        <label for="checkbox1">
+            <input class="checkbox" id="checkbox1" type="checkbox" name="checkbox1" value="1" /> I want to subscribe to
+            the newsletter </a>
+        </label>
+
+        <label for="checkbox2">
+            <input class="checkbox" id="checkbox2" type="checkbox" name="terms-and-conditions" value="2" required /> I
+            accept the terms and conditions</a>
+        </label>
+
+        <input type="submit" value="Submit" />
 
     </form>
 </body>
 
-<!-- <footer>
-    <p>
-        Created by Volodymyr Hrehul - <a href="https://github.com/Premisterio">GitHub</a>
+<!-- // запущені тести
+34. Ви повинні мати щонайменше два елементи input з type зі значенням radio (радіокнопки).
+35. Ви повинні мати щонайменше дві радіокнопки, які є нащадками #survey-form.
+36. Всі радіокнопки повинні мати атрибут value та значення.
+37. Всі радіокнопки повинні мати атрибут name та значення.
+38. В кожній групі радіокнопок повинно бути щонайменше 2 радіокнопки.
+42. Ви повинні мати елемент input або button з id зі значенням submit.
+43. Ваш #submit повинен мати type зі значенням submit.
+44. Ваш #submit повинен бути нащадком #survey-form.
+// виконані тести -->
+
+<footer>
+    <p class="footer-p">
+        Created by Volodymyr Hrehul - <a class="footer-a" href="https://github.com/Premisterio">GitHub</a>
     </p>
-</footer> -->
+</footer>
 
 </html>
