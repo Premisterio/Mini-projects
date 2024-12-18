@@ -11,10 +11,17 @@
         font-style: normal;
 }
 
-
 html {
-    background-color: beige;
+    background-color: #e0e1dd;
 }
+
+main {
+    background-color: #dddddd;
+    margin: 30px 8px;
+    color: #000;
+}
+
+
 
 /* !Must be centered, resize responsively,  */
 img {
@@ -24,6 +31,9 @@ img {
     max-height: fit-content;
 }
 
+footer {
+    color: #000;
+}
 
 /* !Customize the link */
 #tribute-link {
