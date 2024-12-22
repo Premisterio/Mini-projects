@@ -1,0 +1,35 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* CSS Reset and font */
+* {
+    scroll-behavior: smooth;
+    font-family: "Libre Franklin", serif;
+}
+
+/* Background */
+html {
+    background-color: rgb(55, 70, 85);
+    color: #FFF;
+}
+
+header {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+nav {
+    border: 1px dashed black;
+    width: 200px;
+    height: 200px;
+}
+
+code {
+    font-family: Consolas,"courier new";
+    color: crimson;
+    background-color: #f1f1f1;
+    padding: 2px;
+    font-size: 105%;
+  }
+
+/* @media query required */

@@ -1,12 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Git basics</title>
 </head>
+
 <body>
-    
+
+    <main id="main-doc">
+
+        <!-- navbar -->
+         <!-- !must be on the left side, always visible -->
+        <nav id="nav-bar">
+            <header>Git Basics Documentation</header>
+            <ul>
+                <li><a class="nav-link" href="#Overview">Overview</a></li>
+                <li><a class="nav-link" href="#Key_features">Key Features</a></li>
+                <li><a class="nav-link" href="#Setup_and_configuration">Setup and configuration</a></li>
+                <li><a class="nav-link" href="#Repository_management">Repository management</a></li>
+                <li><a class="nav-link" href="#Tips">Tips</a></li>
+            </ul>
+        </nav>
+            
+        <!-- Section 1 -->
+        <section id="Overview" class="main-section">
+            <header>
+                Overview
+            </header>
+                <p>
+                    Git is a distributed version control system designed to help developers collaborate efficiently and manage changes in their codebase over time. Originally developed by Linus Torvalds in 2005, Git has become the most widely used version control system in the software development industry. It tracks changes to files, enables multiple developers to work on the same project, and allows for easy rollback to previous versions if necessary.
+                </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="Key_features" class="main-section">
+            <header>
+                Key features
+            </header>
+            <ol>
+                <li>
+                    Distributed Version Control: Every developer's local repository is a full copy of the entire project history, making Git resilient to network issues.
+                </li>
+                <li>
+                    Branching and Merging: Git's branching model is lightweight, enabling users to experiment with new features or fixes without disrupting the main project.
+                </li>
+                <li>
+                    Commit History: Git records every change with a unique identifier (commit hash), allowing developers to track progress and understand the history of their project.
+                </li>
+                <li>
+                    Collaboration: Git makes it easy for teams to share changes via remote repositories like GitHub, GitLab, or Bitbucket.
+                </li>
+                <li>
+                    Efficiency: Git is designed to handle projects of all sizes, from small personal projects to massive enterprise applications.
+                </li>
+            </ol>
+            <p>
+                Git is designed to be both powerful and flexible, accommodating a wide range of workflows and development styles. By mastering Git's basic commands and understanding its underlying principles, developers can work more effectively and reduce the risk of losing valuable work.
+            </p>
+        </section>
+                
+        <!-- Section 3 -->
+        <section id="Setup_and_configuration" class="main-section">
+            <header>
+                Setup and configuration
+            </header>
+            <p>
+                The git config command is used to configure Git settings and preferences. These settings can be applied globally across all repositories or locally to a specific repository, depending on the scope you specify. Configuring Git correctly is one of the first steps in using it effectively, as it ensures your commits are properly identified and helps manage your development environment.
+            </p>
+            <p>
+                <br> Configure user information and settings. <br>
+                <code>
+                    git config --global user.name "Your Name"
+                </code>
+                <br> Set email. <br>
+                <code>
+                    git config --global user.email "youremail@example.com"
+                </code>
+                <br> Check configuration. <br>
+                <code>
+                    git config --list
+                </code>
+            </p>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="Repository_management" class="main-section">
+            <header>
+                Repository management
+            </header>
+            <p>
+                Managing repositories is a core aspect of working with Git. A repository is a directory that contains your project files along with the .git folder, where Git stores the project's metadata and version history. Git provides powerful commands for initializing, cloning, and managing repositories.
+            </p>
+            <p>
+                <br> Initialize a new Git repository in the current directory. <br>
+                <code>
+                    git init
+                </code>
+                <br> Clone an existing repository to your local machine. <br>
+                <code>
+                    git clone (repository-url)
+                </code>
+            </p>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="Tips" class="main-section">
+            <header>
+                Tips
+            </header>
+            <p>
+                Use <code>git help (command)</code> for detailed information about any Git command.
+            </p>
+            <p>
+                Use <code>.gitignore</code> files to specify files and directories that Git should ignore.
+            </p>
+            <p>
+                Keep your branches clean: Regularly delete branches that are no longer needed to avoid clutter and confusion.
+            </p>
+            <p>
+                Stash unfinished work: Use <code>git stash</code> to save changes temporarily when switching tasks without committing.
+            </p>
+        </section>
+
+    </main>
 </body>
 </html>
