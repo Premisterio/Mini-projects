@@ -3,33 +3,125 @@
 
 /* CSS Reset and font */
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: "Libre Franklin", serif;
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 1.1rem;
 }
 
-/* Background */
-html {
-    background-color: rgb(55, 70, 85);
-    color: #FFF;
-}
-
-header {
+/* Header in nav */
+.nav-header {
     font-weight: 700;
     font-size: 1.3rem;
+    padding: 1rem;
 }
 
+/* Header in main */
+header {
+    font-weight: 700;
+    font-size: 1.7rem;
+    padding: 1rem;
+}
+
+/* Selector for bold text */
+.bold {
+    font-weight: bold;
+}
+
+/* Navigation panel */
 nav {
-    border: 1px dashed black;
+    margin: 0;
+    padding: 0;
     width: 200px;
-    height: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    border-right: 1px solid black;
 }
 
+/* Style for individual link */
+nav > ul > li > a{
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    border-top: 1px solid black;
+}
+
+/* Bottom border */
+nav > ul > li:last-child {
+    border-bottom: 1px solid black;
+}
+
+/* Mouse hover */
+nav > ul> li > a:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* Main padding and margin */
+main {
+    margin-left: 12rem;
+    padding: 1rem 3rem;
+}
+
+/* Ordered list style */
+ol {
+    padding-left: 2em;
+}
+
+/* Ordered list item style */
+ol > li {
+    margin: 0.4em 0;
+}
+
+/* List item style for Tips */
+.li-tips {
+    padding-left: 1.5rem;
+    padding: 0.4rem 0;
+}
+
+/* Paragraph style */
+p {
+    margin: 1rem 0;
+    padding-left: 1rem;
+}
+
+/* Code box style */
 code {
-    font-family: Consolas,"courier new";
+    font-family: "courier new", monospace;
     color: crimson;
     background-color: #f1f1f1;
-    padding: 2px;
+    padding: 0.1em 0;
     font-size: 105%;
-  }
+}
 
-/* @media query required */
+/* Makes the navigation bar positioned on the top for mobile devices */
+@media screen and (max-width: 590px) {
+
+    /* Makes the nav-bar take full width */
+    nav {
+      width: 100%;
+      position: relative;
+      height: auto;
+    }
+    
+    /* Stack navigation links vertically */
+    nav ul {
+      display: block;
+      padding: 0;
+    }
+  
+    nav > ul > li > a {
+      padding: 12px 16px;
+      text-align: center;
+    }
+
+    /* Full width content on smaller screens */
+    main {
+      margin-left: 0; 
+    }
+  }
