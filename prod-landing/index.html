@@ -11,26 +11,52 @@
 
 <body>
     <main>
-
         <header id="header">
-        
-            <label class="logo"><img id="header-img" src="terminal-fill.svg" alt="terminal logo">Oh My Terminal</label>
-    
-            <nav id="nav-bar">
 
+            <label class="logo">
+                <img id="header-img" src="terminal-fill.svg" alt="terminal logo"> Oh My Terminal
+            </label>
+            
+            <!-- Hamburger menu toggle -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- ADD LINKS TO PAGE -->
+            <nav id="nav-bar">
                 <ul class="nav-ul">
-                    <li><a class="nav-link" href="#">About</a></li>
+                    <li><a class="nav-link" href="#hero">About</a></li>
                     <li><a class="nav-link" href="#">Watch</a></li>
                     <li><a class="nav-link" href="#">Pricing</a></li>
                     <li><a class="nav-link" href="#">Contact Us</a></li>
                 </ul>
-
             </nav>
-
         </header>
 
+        <section id="hero">
+            <div class="hero">
+                <h1 class="hero-h1">Oh My Terminal!</h1>
+                <p class="hero-p">Unleash your terminal like never before.
+                    Oh My Terminal is the ultimate power-up for your command line—a vibrant, open-source playground fueled by a passionate community. Packed with mind-blowing shortcuts, dazzling themes, clever plugins, and a sprinkle of terminal magic that'll leave you shouting…</p>
+            </div>
+        </section>
+
+        <section class="quote">
+            <blockquote>
+                <p id="quote-text">"Because a plain terminal is just <i>terminally</i> boring — <strong>Oh My Terminal!</strong>"</p>
+            </blockquote>
+        </section>
+
+        <section class="video">
+
+        </section>
+
+
+
     </main>
-    <!-- footer -->
 </body>
 
 </html>
