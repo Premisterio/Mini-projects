@@ -28,14 +28,15 @@
             <!-- ADD LINKS TO PAGE -->
             <nav id="nav-bar">
                 <ul class="nav-ul">
-                    <li><a class="nav-link" href="#hero">About</a></li>
-                    <li><a class="nav-link" href="#watch">Watch</a></li>
+                    <li><a class="nav-link" href="#">About</a></li>
+                    <li><a class="nav-link" href="#">Watch</a></li>
                     <li><a class="nav-link" href="#">Pricing</a></li>
                     <li><a class="nav-link" href="#">Contact Us</a></li>
                 </ul>
             </nav>
         </header>
 
+        <!-- Hero section -->
         <section id="hero">
             <div class="hero">
                 <h1>Oh My Terminal!</h1>
@@ -44,14 +45,15 @@
             </div>
         </section>
 
+        <!-- Quote section -->
         <section class="quote">
             <blockquote>
                 <p>Because a plain terminal is just <i>terminally</i> boring — <strong>Oh My Terminal!</strong></p>
             </blockquote>
         </section>
 
+        <!-- Video section -->
         <section class="watch-container" id="watch">
-
             <div class="container-text">
                 <p><span>Ready to unlock the true power of your command line?</span>
                     <br>
@@ -63,23 +65,56 @@
                 </p>
             </div>
 
-            <div class="container-video">
-                <iframe id="video"
+            <div class="container-video" id="video">
+                <iframe 
                     width="420" 
                     height="255" 
-                    src="https://www.youtube.com/embed/ZIcOM1gAlaU?controls=0" 
+                    src="https://www.youtube.com/embed/ZIcOM1gAlaU?controls=1" 
                     title="YouTube video player" 
                     frameborder="0" 
                     allow="autoplay; encrypted-media; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
             </div>
-
         </section>
 
+        <!-- Pricing Section -->
+        <section class="container-pricing">
+            <div class="price-1">
+                <h2>Community Edition</h2>
+                <div class="pricing-text">
+                        <p>Features:</p>
+                    <ul>
+                        <li>Basic plugins and themes.
+                        </li>
+                        <li>Access to the community forum.</li>
+                        <li>Regular updates (when we remember).</li>
+                    <p>Perfect for hobbyists, students, and people who love free stuff.</p>
+                </div>
+                <div class="button">
+                    <button>Download</button>
+                </div>
+            </div>
 
+            <div class="price-2">
+                <h2>Supporter Edition</h2>
+                <div class="pricing-text">
+                        <p>Features:</p>
+                    <ul>
+                        <li>Exclusive supporter-only themes.</li>
+                        <li>Priority bug fixes (because you paid us).</li>
+                        <li>A warm, fuzzy feeling for supporting development.</li>
+                    </ul>
+                    <p>Ideal for terminal enthusiasts and benevolent backers!</p>
+                </div>
+                <div class="button">
+                    <button>More details</button>
+                </div>
+            </div>
+        </section>
 
     </main>
+
 </body>
 
 </html>
