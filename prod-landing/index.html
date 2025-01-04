@@ -66,8 +66,9 @@
                 <span>Watch this tutorial and find out how to use it!</span>
                 </p>
             </div>
-            <div class="container-video" id="video">
+            <div class="container-video">
                 <iframe 
+                    id="video"
                     width="420" 
                     height="255" 
                     src="https://www.youtube.com/embed/ZIcOM1gAlaU?controls=1" 
@@ -126,7 +127,7 @@
                     <input type="email" id="email" name="email" placeholder="example@email.com"     min="3" max="254" required>
                 <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="5" maxlength="580" placeholder="Type your feedback here"></textarea>
-                <button id="submit" type="submit">Send</button>
+                <input id="submit" type="submit"/>
             </form>
         </section>
 
