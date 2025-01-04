@@ -12,6 +12,7 @@
 <body>
     <main>
 
+        <!-- Header -->
         <header id="header">
             <label class="logo">
                 <img id="header-img" src="terminal-fill.svg" alt="terminal logo"> Oh My Terminal
@@ -28,10 +29,10 @@
             <!-- ADD LINKS TO PAGE -->
             <nav id="nav-bar">
                 <ul class="nav-ul">
-                    <li><a class="nav-link" href="#">About</a></li>
-                    <li><a class="nav-link" href="#">Watch</a></li>
-                    <li><a class="nav-link" href="#">Pricing</a></li>
-                    <li><a class="nav-link" href="#">Contact Us</a></li>
+                    <li><a class="nav-link" href="#hero">About</a></li>
+                    <li><a class="nav-link" href="#watch">Watch</a></li>
+                    <li><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li><a class="nav-link" href="#feedback">Contact Us</a></li>
                 </ul>
             </nav>
         </header>
@@ -41,7 +42,8 @@
             <div class="hero">
                 <h1>Oh My Terminal!</h1>
                 <p>Unleash your terminal like never before.
-                    Oh My Terminal is the ultimate power-up for your command line—a vibrant, open-source playground fueled by a passionate community. Packed with mind-blowing shortcuts, dazzling themes, clever plugins, and a sprinkle of terminal magic that'll leave you shouting…</p>
+                    Oh My Terminal is the ultimate power-up for your command line—a vibrant, open-source playground fueled by a passionate community. Packed with mind-blowing shortcuts, dazzling themes, clever plugins, and a sprinkle of terminal magic that'll leave you shouting…
+                </p>
             </div>
         </section>
 
@@ -64,7 +66,6 @@
                 <span>Watch this tutorial and find out how to use it!</span>
                 </p>
             </div>
-
             <div class="container-video" id="video">
                 <iframe 
                     width="420" 
@@ -79,7 +80,7 @@
         </section>
 
         <!-- Pricing Section -->
-        <section class="container-pricing">
+        <section class="container-pricing" id="pricing">
             <div class="price-1">
                 <h2>Community Edition</h2>
                 <div class="pricing-text">
@@ -95,7 +96,6 @@
                     <button>Download</button>
                 </div>
             </div>
-
             <div class="price-2">
                 <h2>Supporter Edition</h2>
                 <div class="pricing-text">
@@ -113,6 +113,33 @@
             </div>
         </section>
 
+        <!-- Divider -->
+        <hr>
+
+        <!-- Form Section -->
+        <section id="feedback">
+            <form id="form" action="https://www.freecodecamp.com/email-submit" method="post">
+                <label id="top-lbl">Give us your Feedback!</label>
+                <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" min="2" max="254" required>
+                <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com"     min="3" max="254" required>
+                <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" maxlength="580" placeholder="Type your feedback here"></textarea>
+                <button id="submit" type="submit">Send</button>
+            </form>
+        </section>
+
+        <section id="footer">
+            <footer>
+                <p>
+                    Created by Volodymyr Hrehul - 
+                    <a target="_blank" class="footer-a" href="https://github.com/Premisterio">
+                        <img id="footer-img" src="https://img.icons8.com/?size=100&id=106562&format=png&color=000000" alt="github logo">
+                    </a>
+                </p>
+            </footer>
+        </section>
     </main>
 
 </body>

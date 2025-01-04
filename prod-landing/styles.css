@@ -10,6 +10,11 @@
     scroll-behavior: smooth;
 }
 
+/* Padding for nav scroll */
+html {
+    scroll-padding-top: 5rem;
+}
+
 /* Nav */
 #header {
     position: sticky;
@@ -147,8 +152,9 @@ html {
 }
 
 .price-1, .price-2 {
-    border: 1px solid black;
+    border: 0.1rem solid black;
     border-radius: 0.325rem;
+    background-color: #FFF;
 }
 
 .container-pricing h2 {
@@ -199,8 +205,80 @@ button:hover {
 }
 
 button:active {
+    background-color: hsl(158, 95%, 34%);
+}
+
+/* Divider */
+hr {
+    border: 0.1rem solid hsl(201, 60%, 80%);
+    border-radius: 0.2rem;
+    margin: 1rem 3rem;
+    align-items: center;
+}
+
+/* Form Section */
+#form {
+    border: 0.1rem solid black;
+    padding: 1rem;
+    max-width: 400px;
+    margin: 3rem auto;
+    border-radius: 0.25rem;
     background-color: #FFF;
-    color: hsl(158, 95%, 34%);
+}
+
+#top-lbl {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#submit {
+    background-color: hsl(211, 100%, 50%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+#submit:hover {
+    background-color: hsl(211, 100%, 35%);
+}
+
+#submit:active {
+    background-color: hsl(211, 100%, 35%);
+}
+
+footer {
+    color: #000;
+    text-align: center;
+}
+
+/* Footer */
+#footer {
+    padding: 0.7rem 0 0.7rem 0;
+    background-color: #ddd;
+}
+
+#footer-img {
+    height: 2%;
+    width: 2%;
+    position: relative;
+    vertical-align: top;
 }
 
 /* Responsive divs for Watch section */
