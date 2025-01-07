@@ -21,13 +21,11 @@
 
 /* Navbar */
 #nav ul {
+    display: flex;
+    justify-content: flex-end;
     list-style-type: none;
     overflow: hidden;
     background-color: var(--dark-color-2);
-}
-  
-#nav li {
-    float:right;
 }
   
 .nav-link {
@@ -42,26 +40,91 @@
     background-color: #111;
 }
 
+
+/* Welcome section */
 #welcome-section {
-    border: 2px orange solid;
-    background-color: #3f3f3f;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    align-items: center;
+    background-color: var(--dark-color-3);
+    padding: 20px;
 }
 
-img {
-    width: 200px;
-    height: 300px;
+.img-container {
+    flex: 1;
+    text-align: center;
+}
+
+.img-container img {
+    width: fit-content;
+    height: auto;
+    max-height: 100vh;
     object-fit: cover;
-    border: 2px red solid;
+    filter: grayscale(0.8);
+    position: sticky;
+    
+}
+
+.bio-container {
+    flex: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.bio-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.bio-container h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #welcome-section {
+        flex-direction: column-reverse;
+    }
+    .img-container {
+        margin-bottom: 20px;
+    }
+    .img-container img {
+        width: 100%;
+        max-height: 50vh;
+    }
 }
 
 
 
+/* Div element around the portrait */
+#img-div {
+    background-color: #FFF;
+    text-align: center;
+    padding: 0.65rem;
+}
 
+/* Portrait */
+#image {
+    width: 50%;
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(1);
+}
 
 
 
 /* Footer */
 #footer {
+    visibility: hidden; /* REMOVE THIS LINE */
     padding: 0.7rem 0 0.7rem 0;
     background-color: #ddd;
     text-align: center;
