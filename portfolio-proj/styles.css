@@ -1,0 +1,135 @@
+:root {
+    --main-color: #ddd;
+    --accent-color: #ccc;
+}
+
+
+
+/* CSS Reset + Font + Smooth scroll */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1.15rem;
+    scroll-behavior: smooth;
+    font-family: Helvetica, sans-serif;
+}
+
+/* Padding for nav */
+html {
+    scroll-padding-top: 5rem;
+}
+
+/* Nav */
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.25rem 10%;
+    background-color: black;
+}
+
+.nav-ul {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 0.125rem;
+    border-radius: 0.320rem;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    background-color: hsl(0, 0%, 85%);
+}
+
+.nav-link:active {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 1.5rem;
+    height: 0.188rem;
+    background: white;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Footer */
+#footer {
+    padding: 0.7rem 0 0.7rem 0;
+    background-color: #ddd;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-a {
+    text-decoration: none;
+}
+
+/* Portrait mode for nav */
+@media (max-width: 400px) {
+
+    .hamburger {
+        display: flex;
+    }
+
+    #nav-bar {
+        position: absolute;
+        top: 3.75rem;
+        right: 10%;
+        background-color: black;
+        border: 1px solid red;
+        border-radius: 0.32rem;
+        box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+        padding: 0.625rem;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.94rem;
+    }
+
+    .menu-toggle:checked + .hamburger + #nav-bar {
+        display: flex;
+    }
+
+    .nav-ul {
+        flex-direction: column;
+        gap: 0.94rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Reduced scroll motion */
+@media (prefers-reduced-motion) {
+    html {
+        scroll-behavior: auto;
+    }
+}
