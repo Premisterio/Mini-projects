@@ -4,13 +4,13 @@
     /* Acid green, green, lighter green */
     --primary-1: #22e81c; 
     --primary-2: #55eb44;
-    --primary-3: rgb(116, 239, 96);
+    --primary-3: #74ef60;
     /* Black, dark grey, light grey */
     --dark-1: #121212; 
     --dark-2: #282828; 
     --dark-3: #3f3f3f;
     /* Dark green, lighter dark green, grey green */
-    --tonal-1: rgb(26, 36, 23);
+    --tonal-1: #1a2417;
     --tonal-2: #2f392c;
     --tonal-3: #464e43;
 }
@@ -27,7 +27,8 @@
 
 /* Padding for nav scroll */
 html {
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 3rem;
+    background-color: var(--dark-2);
 }
 
 /* Navbar */
@@ -88,7 +89,7 @@ html {
     display: none;
 }
 
-/* Portrait mode for nav */
+/* Navbar for mobile */
 @media (max-width: 650px) {
 
     .hamburger {
@@ -135,7 +136,7 @@ html {
 
 .img-container {
     flex: 3;
-    background-color: var(--dark-2);
+    background-color: var(--dark-1);
 }
 
 .img-container img {
@@ -147,7 +148,7 @@ html {
 
 .bio-container {
     flex: 2;
-    background-color: var(--dark-2);
+    background-color: var(--dark-1);
     text-align: center;
     padding: 22% 3rem 25% 3rem;
 }
@@ -167,13 +168,14 @@ html {
     font-weight: 400;
 }
 
+/* Welcome section for mobile */
 @media (max-width: 650px) {
     #welcome-section {
         flex-direction: column-reverse;
     }
 
     .bio-container {
-        padding: 40px 3rem 1% 3rem;
+        padding: 2.5rem 3rem 1% 3rem;
         flex: 1;
     }
 
@@ -182,12 +184,83 @@ html {
     }
 }
 
+/* h1 before project section */
+.project-section-h1 {
+    color: var(--text);
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 400;
+    font-size: 2.5rem;
+    font-style: italic;
+    letter-spacing: -2%;
+}
 
+/* Project section */
+#projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    background-color: var(--dark-1);
+}
 
+.project-tile {
+    width: 20.3rem;
+    background-color: var(--dark-2);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    margin: 1.2rem;
+}
+
+.project-tile img {
+    width: 100%;
+    height: auto;
+}
+
+.tile-content {
+    padding: 1rem;
+    text-align: center;
+}
+
+.tile-content h3 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tile-content p {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+.tile-content .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--dark-2);
+    border: 1px solid var(--primary-1);
+    text-decoration: none;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+    color: var(--text);
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--primary-1);
+    color: var(--dark-1);
+}
+
+.btn:active {
+    background-color: var(--primary-3);
+    color: var(--dark-1);
+}
 
 
 
 /* DON'T TOUCH */
+/* ADD ANIMATIONS TO NAV, PROJECTS, h1 and else */
 /* REFRACTOR LATER */
 /* ADD DARK MODE TO FOOTER */
 /* Footer */
