@@ -8,37 +8,42 @@
 </head>
 <body>
 
-    <!-- Nav -->
-    <header id="nav">
-        <ul>
-            <li><a href="#" class="nav-link">About</a></li>
-            <li><a href="#" class="nav-link">Projects</a></li>
-            <li><a href="#" class="nav-link">Contacts</a></li>
+<!-- Header -->
+<header id="header">
+
+    <!-- Hamburger menu toggle -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <!-- Navbar -->
+    <nav id="nav-bar">
+        <ul class="nav-ul">
+            <li><a href="#welcome-section">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contacts">Contacts</a></li>
         </ul>
-    </header>
+    </nav>
+</header>
+
 
     <!-- Welcome section -->
-
-    <!-- Must have:
-    - h1 with text;
-    - height set to 100vh;
-    -->
     <section id="welcome-section">
-
         <div class="img-container">
             <img src="portrait.png" alt="Portrait of Volodymyr Hrehul">
         </div>
         
         <div class="bio-container">
             <h1>Hi, I'm Volodymyr Hrehul</h1>
-            <h2>Software Engineering Student & Aspiring Front-End Developer</h2>
+            <h2>Software Engineering Student & Front-End Developer</h2>
         </div>
-
     </section>
-    
+
 
     <!-- Section with projects -->
-
     <!-- Must have
     - an element with class of "project-tile";
     (make tile layout using divs)
@@ -46,7 +51,50 @@
     (<a> with href="#")
     LINKS MUST HAVE target attribute set to "_black"
     -->
-    <section id="projects"></section>
+    <section id="projects">
+        <div class="project-tile">
+            <img src="" alt="">
+            <div class="tile-content">
+                <h3>Survey Form</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+            </div>
+        
+        </div>
+
+
+        <div class="project-tile">
+            <img src="" alt="">
+            <div class="tile-content">
+                <h3>Tribute Page</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+
+        <div class="project-tile">
+            <img src="" alt="">
+            <div class="tile-content">
+                <h3>Technical Documentation Page</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+
+        <div class="project-tile">
+            <img src="" alt="">
+            <div class="tile-content">
+                <h3>Product Landing Page</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts section -->
+    <!-- Includes: 
+    - links to socials
+    - icons
+    - animations 
+    -->
+    <section id="contacts"></section>
 
     <!-- Footer -->
     <section id="footer">

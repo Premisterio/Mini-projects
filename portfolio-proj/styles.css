@@ -1,12 +1,18 @@
 /* Color palette variables */
 :root {
-    --primary-color: #22e81c; 
-    --primary-color-2: #55eb44;
-    --primary-color-3: #74ef60;
-    --dark-color: #121212;
-    --dark-color-2: #282828; 
-    --dark-color-3: #3f3f3f;
-
+    --text: #FFF;
+    /* Acid green, green, lighter green */
+    --primary-1: #22e81c; 
+    --primary-2: #55eb44;
+    --primary-3: rgb(116, 239, 96);
+    /* Black, dark grey, light grey */
+    --dark-1: #121212; 
+    --dark-2: #282828; 
+    --dark-3: #3f3f3f;
+    /* Dark green, lighter dark green, grey green */
+    --tonal-1: rgb(26, 36, 23);
+    --tonal-2: #2f392c;
+    --tonal-3: #464e43;
 }
 
 /* CSS Reset + font + smooth scroll */
@@ -19,109 +25,171 @@
     font-family: Helvetica, sans-serif;
 }
 
-/* Navbar */
-#nav ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style-type: none;
-    overflow: hidden;
-    background-color: var(--dark-color-2);
-}
-  
-.nav-link {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-  
-#nav li a:hover {
-    background-color: #111;
+/* Padding for nav scroll */
+html {
+    scroll-padding-top: 5rem;
 }
 
+/* Navbar */
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--dark-1);
+}
+
+.nav-ul {
+    margin-left: auto;
+    list-style: none;
+    display: flex;
+}
+
+.nav-ul li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+.nav-ul li a {
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-ul li:hover {
+    background-color: var(--dark-2);
+}
+
+.nav-ul li:active {
+    background-color: var(--dark-3);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 1.5rem;
+    height: 0.188rem;
+    background: var(--text);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Portrait mode for nav */
+@media (max-width: 650px) {
+
+    .hamburger {
+        display: flex;
+        padding: 1.085rem;
+    }
+
+    #nav-bar {
+        position: absolute;
+        top: 3.75rem;
+        right: 2%;
+        background-color: var(--dark-1);
+        border-radius: 0.32rem;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle:checked + .hamburger + #nav-bar {
+        display: flex;
+    }
+
+    .nav-ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-ul a {
+        padding: 2rem;
+    }
+    .nav-ul li:hover,
+    .nav-ul li:active {
+        border-radius: 0.32rem;
+    }
+}
 
 /* Welcome section */
 #welcome-section {
-    display: flex;
-    flex-wrap: wrap;
     height: 100vh;
-    align-items: center;
-    background-color: var(--dark-color-3);
-    padding: 20px;
+    background-color: var(--dark-1);
+    color: var(--text);
+    display: flex;
 }
 
 .img-container {
-    flex: 1;
-    text-align: center;
+    flex: 3;
+    background-color: var(--dark-2);
 }
 
 .img-container img {
-    width: fit-content;
-    height: auto;
-    max-height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     filter: grayscale(0.8);
-    position: sticky;
-    
 }
 
 .bio-container {
-    flex: 1;
+    flex: 2;
+    background-color: var(--dark-2);
     text-align: center;
-    color: white;
-    padding: 20px;
+    padding: 22% 3rem 25% 3rem;
 }
 
 .bio-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    color: var(--primary-3);
+    font-size: 2em;
+    letter-spacing: -2%;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 0.5rem rgba(116, 239, 96, 0.5);
+    background-color: transparent;
 }
 
 .bio-container h2 {
-    font-size: 1.5rem;
-    margin-top: 10px;
-    color: #ccc;
+    font-size: 1.4em;
+    font-weight: 400;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 650px) {
     #welcome-section {
         flex-direction: column-reverse;
     }
+
+    .bio-container {
+        padding: 40px 3rem 1% 3rem;
+        flex: 1;
+    }
+
     .img-container {
-        margin-bottom: 20px;
-    }
-    .img-container img {
-        width: 100%;
-        max-height: 50vh;
+        flex: 1;
     }
 }
 
 
 
-/* Div element around the portrait */
-#img-div {
-    background-color: #FFF;
-    text-align: center;
-    padding: 0.65rem;
-}
-
-/* Portrait */
-#image {
-    width: 50%;
-    display: block;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 0.5rem;
-    max-width: 100%;
-    max-height: 100%;
-    filter: grayscale(1);
-}
 
 
 
+/* DON'T TOUCH */
+/* REFRACTOR LATER */
+/* ADD DARK MODE TO FOOTER */
 /* Footer */
 #footer {
     visibility: hidden; /* REMOVE THIS LINE */
