@@ -1,0 +1,130 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background color gradient */
+html {
+    background: linear-gradient(90deg, hsl(222, 43%, 51%) 0%, #182848 100%);
+}
+
+/* Title style */
+#title {
+    color: hsl(205, 96%, 90%);
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 0.2em;
+}
+
+/* Description */
+#description {
+    color: hsl(205, 90%, 70%);
+    text-align: center;
+    font-size: 1.3em;
+}
+
+/* Body of the form */
+#survey-form {
+    padding: 0.2em 1em 1em;
+    background-color: hsla(205, 43%, 51%, 80%);
+    color: #FFF;
+    margin: 1em auto;
+    max-width: 40em;
+    border-radius: 0.5em;
+}
+
+/* Styles input areas */
+#dropdown,
+input,
+textarea {
+    margin: 0.5em 0;
+    width: 100%;
+    min-height: 2em;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 10px;
+
+}
+
+/* Style for radio label */
+.radio-btn {
+    width: 80;
+    display: block;
+}
+
+/* Radio buttons */
+.radio-btn > input {
+    display: inline;
+    width: auto;
+    min-height: auto;
+    
+}
+
+/* Separator */
+hr{
+    margin: 1em 0 1em 0 ;
+}
+
+/* Checkbox style */
+.checkbox {
+    width: 5%;
+    min-height: 1.5em;
+    margin: 0;
+}
+
+/* Creates space between labels */
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+/* CSS for checkbox label */
+.checkbox-lbl {
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* Submit button */
+input[type="submit"] {
+    display: block;
+    border: none;
+    border-radius: 0.2em;
+    width: 60%;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    color: #FFF;
+    background-color: hsl(133, 50%, 50%);
+    min-width: 17em;
+}
+
+input[type="submit"]:hover {
+    background-color: hsl(133, 50%, 40%);
+    color: #FFF;
+}
+
+input[type="submit"]:active {
+    background-color: hsl(133, 50%, 30%);
+    color: #FFF;
+}
+
+/* Footer */
+.footer-p,
+.footer-a {
+    font-family: monospace;
+    color: #EEE;
+    text-align: center;
+}
+
+.footer-a:hover {
+    color: rgb(170, 255, 0);
+}
+
+.footer-a:active {
+    color: rgb(255, 100, 0);
+}

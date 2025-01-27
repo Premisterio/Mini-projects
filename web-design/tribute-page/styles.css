@@ -1,0 +1,147 @@
+/* Import Libre Franklin font */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* CSS RESET + Font */
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Libre Franklin", Helvetica, sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+}
+
+/* Page background */
+html {
+    background-color: #efefef;
+}
+
+/* Main element style */
+main {
+    background-color: #d1d1d1;
+    margin: 1.5rem 0.5rem;
+    color: #000;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+/* Title */
+#title, #description {
+    text-align: center;
+}
+
+/* Description below the title */
+#description {
+    padding: 0.5rem 0 0.5rem 0;
+    font-style: italic
+}
+
+/* Div element around the portrait */
+#img-div {
+    background-color: #FFF;
+    text-align: center;
+    padding: 0.65rem;
+}
+
+/* Portrait */
+#image {
+    width: 50%;
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(1);
+}
+
+/* Caption under the portrait */
+#img-caption {
+    margin: 0.65rem 0 0.2rem 0;
+}
+
+/* h2 */
+#timeline {
+    text-align: center;
+    margin: 1.5rem 0 2rem 0;
+    font-weight: 600;
+}
+
+/* Bold text class selector */
+.bold {
+    font-weight: 700;
+}
+
+/* Spacing of the list */
+#tribute-info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0 auto;
+    justify-content: space-evenly;
+    max-width: 37rem;
+}
+
+/* List item style */
+ul li {
+    margin: 1.2rem 0;
+}
+
+/* Spacing after timeline */
+blockquote{
+    margin-top: 2rem;
+}
+
+/* Quote text */
+#quote-text {
+    font-style: italic;
+    text-align: center;
+}
+
+/* Cite under the quote */
+#quote-bottom {
+    text-align: center;
+}
+
+/* h3 text for the link */
+h3 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Link to Wikipedia */
+#tribute-link {
+    color: hsla(228, 100%, 24%, 0.671);
+    text-decoration: none;
+}
+
+#tribute-link:hover {
+    color: hsla(231, 100%, 40%, 0.671);
+}
+
+#tribute-link:active {
+    color: hsla(240, 100%, 60%, 0.671);
+}
+
+/* Footer */
+footer {
+    color: #000;
+    text-align: center;
+}
+
+/* Footer link */
+.footer-a {
+    color: hsla(305, 90%, 20%, 0.670);
+
+}
+
+.footer-a:hover {
+    color: hsla(320, 100%, 40%, 0.670);
+}
+
+.footer-a:active {
+    color: hsla(340, 100%, 60%, 0.670);
+}
