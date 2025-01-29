@@ -21,11 +21,11 @@
 
 /* Body, background gradient */
 body {
-  height: 100vh;
   font-family: "Poppins", sans-serif;
   background: linear-gradient(115deg, var(--dark-1), var(--dark-3));
 }
 
+/* Main container */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -36,60 +36,100 @@ body {
 
 /* Palindrome checker input container */
 .input-container {
-  width: 25rem;
+  width: fit-content;
+  max-width: 25rem;
   padding: 1.5em;
   background-color: var(--dark-1);
   border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(34, 232, 28, 0.2);
 }
 
 h1 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: var(--primary-1);
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h3 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: var(--text);
-  font-size: 1.25rem;
+  font-size: 1.3rem;
 }
 
+/* Input field */
 input {
-  padding: 12px;
-  margin-bottom: 12px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
   width: 100%;
   border: none;
   border-bottom: 2px solid var(--primary-1);
   background: transparent;
+
   color: var(--text);
   outline: none;
   font-size: 1rem;
 }
 
+/* Check button */
 button {
   padding: 0.75rem;
   margin: 0.75rem auto 0.75rem auto;
   width: 80%;
-  border-radius: 0.25rem;
+  border-radius: 2rem;
   background-color: var(--text);
-  color: var(--dark-1);
+
+  color: var(--text);
   border: none;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
   display: block;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--primary-1), var(--primary-2));
+  border-radius: 2rem;
+  z-index: -1;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--dark-1);
+  border-radius: 2rem;
+  z-index: -1;
 }
 
 button:hover {
-  background-color: var(--primary-2);
   color: var(--text);
+  transform: scale(1.05);
 }
 
 button:active {
   background-color: var(--primary-3);
-  color: var(--text);
+  color: var(--dark-1);
+  transform: scale(0.99);
+  transition: transform 0.1s;
+}
+
+button:active::after {
+  background: var(--primary-1);
 }
 
 /* Result section */
@@ -98,10 +138,15 @@ button:active {
   text-align: center;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Info section */
 .info-container {
+  width: fit-content;
+  max-width: 25rem;
   margin-top: 2rem;
-  width: 15rem;
   padding: 1em;
   background-color: var(--dark-3);
   border: 1px solid var(--text);
