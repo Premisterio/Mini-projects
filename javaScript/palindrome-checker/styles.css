@@ -157,28 +157,32 @@ p {
   color: var(--text);
 }
 
-/* Footer
-#footer {
-  padding: 0.7rem 0 0.7rem 0;
-  background-color: #000;
-  color: #fff;
-  border-top: 1px solid var(--dark-3);
+svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Footer */
+footer {
+  padding: 0.7rem 0;
+  background-color: transparent;
+  color: var(--text);
   text-align: center;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  margin-top: 2rem;
 }
 
 .footer-a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text);
   cursor: pointer;
 }
 
 .footer-a:hover {
-  color: #fff;
+  color: var(--primary-1);
 }
 
 .footer-a:active {
-  color: #fff;
-} */
+  color: var(--primary-2);
+}
