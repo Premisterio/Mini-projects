@@ -25,3 +25,8 @@ function returnResult() {
 };
 
 checkBtn.addEventListener("click", returnResult);
+textInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        returnResult();
+    }
+});
