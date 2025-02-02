@@ -1,3 +1,10 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+
+:root {
+  --git-purple: #6e5494;
+}
+
 /* CSS Reset */
 * {
   margin: 0;
@@ -5,47 +12,34 @@
   box-sizing: border-box;
 }
 
+/* Background */
 body {
-  background-color: #444444;
-}
-
-/* Background ellipse elements
-body {
+  font-family: "Fugaz One", sans-serif;
   height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
+  background: radial-gradient(
+      circle at 8% 40%,
+      rgba(255, 13, 106, 0.7) 20%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(5, 0, 255, 0.7) 25%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 80% 35%,
+      rgba(0, 255, 224, 0.7) 20%,
+      transparent 60%
+    );
+  background-size: cover;
+  background-blend-mode: screen;
 }
-
-.ellipse {
-  position: fixed;
-  width: 31.25rem;
-  height: 25.625rem;
-  border-radius: 50%;
-  filter: blur(6.25rem);
-  opacity: 0.7;
-  mix-blend-mode: screen;
-}
-
-.ellipse.one {
-  background: #ff0d6a;
-  top: 30%;
-  left: 5%;
-}
-
-.ellipse.two {
-  background: #0500ff;
-  top: 35%;
-  left: 35%;
-}
-
-.ellipse.three {
-  background: #00ffe0;
-  top: 30%;
-  left: 55%;
-} */
 
 /* Centers app */
 .main-container {
@@ -64,74 +58,119 @@ body {
   justify-content: center;
   padding: 2em;
   max-width: 35rem;
-  background-color: #193f63;
   border-radius: 0.5em;
   gap: 1.5rem;
 }
 
+/* Glass effect */
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(0.7rem);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow: 0 0.5rem 2rem rgba(122, 122, 122, 0.37);
+}
+
+/* Headings */
 h1 {
   text-align: center;
   color: #fff;
   font-size: 2.5rem;
-  width: 100%;
 }
 
+/* Input */
 input {
   padding: 0.75rem;
   width: 90%;
   border: none;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid var(--git-purple);
   background: transparent;
   color: white;
   outline: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
+input::placeholder {
+  font-family: "Fugaz One", sans-serif;
+  color: white;
+  opacity: 0.6;
+}
+
+/* Button */
 button {
+  font-family: "Fugaz One", sans-serif;
   padding: 0.85rem;
   width: 90%;
   border-radius: 0.7rem;
   background-color: white;
-  color: red;
+  color: var(--git-purple);
   border: none;
   cursor: pointer;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
+  transition: transform 0.4s;
 }
 
+button:hover {
+  transform: scale(1.02);
+  background-color: var(--git-purple);
+  color: white;
+}
+
+button:active {
+  background-color: var(--git-purple);
+  color: white;
+  transform: scale(0.999);
+  transition: transform 0.1s;
+}
+
+/* Output text */
 #result {
   color: #fff;
   font-size: 1.8rem;
 }
 
-/* Hide element */
+/* Hidden element */
 .hidden {
   display: none;
 }
 
-/* TO DO FINISH FOOTER */
 /* Footer */
 footer {
   padding: 0.7rem 0;
-  background-color: transparent;
-  color: white;
+  color: #6e5494;
   text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
 }
 
+/* Footer links */
 .footer-a {
   text-decoration: none;
-  color: green;
+  color: var(--git-purple);
   cursor: pointer;
 }
 
 .footer-a:hover {
-  color: yellow;
+  color: hsl(0, 100%, 50%);
 }
 
 .footer-a:active {
-  color: red;
+  color: hsl(0, 100%, 40%);
+}
+
+/* Darker glass effect on small screens */
+@media (max-width: 500px) {
+  .glass {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3));
+    backdrop-filter: blur(1rem);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
+  }
 }
