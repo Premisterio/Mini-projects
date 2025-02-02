@@ -80,6 +80,7 @@ h1 {
   text-align: center;
   color: #fff;
   font-size: 2.5rem;
+  font-weight: 500;
 }
 
 /* Input */
@@ -130,9 +131,10 @@ button:active {
 }
 
 /* Output text */
-#result {
+#output {
   color: #fff;
   font-size: 1.8rem;
+  text-align: center;
 }
 
 /* Hidden element */
@@ -173,4 +175,17 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
   }
+}
+
+/* Removes the arrows on the side: Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox specific*/
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
