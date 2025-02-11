@@ -6,23 +6,20 @@
     <title>US Number Validator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <main class="main">
         <div class="phone-outline">
             <div class="phone-lip"></div>
             <div class="phone-monitor">
-
                 <div class="app">
                     <h1>US Number Validator</h1>
-                    <input id="user-input" type="number" placeholder="Enter a number">
+                    <input id="user-input" type="text" placeholder="Enter a number" maxlength="12">
                     <div class="button-container">
                         <button  id="check-btn">Check</button>
                         <button id="clear-btn">Clear</button>
                     </div>
                     <p id="results-div"></p>
                 </div>
-
                 <div class="info-box">
                     <h3>About this app</h3>
                     <p class="info-text">
@@ -30,19 +27,18 @@
                         Use "Clear" to reset.
                     </p>
                 </div>
-
             </div>
             <div class="side-button-top"></div>
             <div class="side-button-middle"></div>
             <div class="side-button-bottom"></div>
-            <div class="volume-button"></div>
+            <div class="power-button"></div>
         </div>
-        
     </main>
-    <!-- TODO:
-    - add hint for the user
-    - add footer
-    -->
+    <footer>
+        <p class="footer-p">
+            Created by Volodymyr Hrehul - <a target="_blank" class="footer-a" href="https://github.com/Premisterio">GitHub</a>
+        </p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

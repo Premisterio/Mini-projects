@@ -1,4 +1,5 @@
-/* TODO: add font, hint for the user and footer */
+/* Font import  */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
 
 /* Color palette */
 :root {
@@ -18,10 +19,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Helvetica, sans-serif;
+  font-family: "Roboto Flex", Helvetica, sans-serif;
   height: 100vh;
-  background-color: rgb(146, 146, 146);
-  font-family: Helvetica, sans-serif;
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+}
+
+main {
+  transform: scale(1.2);
 }
 
 /* Phone container */
@@ -45,7 +50,7 @@ body {
   width: 7rem;
   height: 1.1rem;
   position: absolute;
-  top: 0.8rem;
+  top: 0.7rem;
   left: 50%;
   transform: translateX(-50%);
   border-bottom-right-radius: 0.5rem;
@@ -102,7 +107,7 @@ body {
 }
 
 /* Right power button */
-.volume-button {
+.power-button {
   position: absolute;
   right: -0.3rem;
   top: 6rem;
@@ -119,6 +124,7 @@ h1 {
   margin-bottom: 1rem;
   color: var(--black);
   font-size: 2.5rem;
+  font-weight: 900;
 }
 
 #user-input {
@@ -130,7 +136,7 @@ h1 {
   border-bottom: 2px solid var(--black);
   background: transparent;
   outline: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 #user-input::placeholder {
@@ -174,13 +180,13 @@ button:active {
 /* Info box below the app */
 .info-box {
   position: absolute;
-  bottom: 1rem; /* Keeps it near the bottom */
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  padding: 10px;
+  padding: 0.9rem;
   background: white;
-  border-radius: 10px;
+  border-radius: 0.7rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -212,4 +218,42 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
+}
+
+/* Footer */
+footer {
+  padding: 0.7rem 0;
+  background-color: transparent;
+  color: var(--text);
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-a {
+  text-decoration: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.footer-a:hover {
+  color: #6e5494;
+}
+
+.footer-a:active {
+  color: red;
+}
+
+/* Smaller screens */
+@media (max-width: 500px) {
+  main {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 330px) {
+  main {
+    transform: scale(0.9);
+  }
 }
