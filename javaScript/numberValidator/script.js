@@ -1,18 +1,26 @@
-// TODO:
-// 1. Grab all the necessary elements (input field, buttons, result display).
+const input = document.getElementById("user-input");
+const check = document.getElementById("check-btn");
+const clear = document.getElementById("clear-btn");
+const result = document.getElementById("results-div");
 
-// 2. Sanitize user input:
-//    - Remove "-", "e", and extra whitespaces.
 
-// 3. Validate the number using regex:
-//    - Regex pattern: /^(\+?)(1\s?)?(\d{3}|\(\d{3}\))[\s\-]?\d{3}[\s\-]?\d{4}$/gm
+const validateNumber = (number) => /^(\+?)(1\s?)?(\d{3}|\(\d{3}\))[\s\-]?\d{3}[\s\-]?\d{4}$/gm.test(number); // goofy ahh regex 
 
-// 4. Implement the check button functionality:
-//    - On click, validate input and display result.
+console.log(validateNumber("1223-456-7890")); // works ig
 
-// 5. Implement the clear button functionality:
-//    - On click, clear the input field and results.
 
-// 6. Show an alert (alarm()) for incorrect input.
 
-// 7. Add a hint for the correct input format (e.g., "(123) 456-7890" or "123-456-7890").
+
+// Clear input logic
+clear.addEventListener("click", () => {
+    input.value = "";
+    result.textContent = "";
+});
+
+
+// checkBtn.addEventListener("click", returnResult);
+// textInput.addEventListener("keydown", (event) => {
+//     if (event.key === "Enter") {
+//         returnResult();
+//     }
+// });
