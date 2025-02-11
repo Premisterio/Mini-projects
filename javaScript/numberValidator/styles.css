@@ -18,8 +18,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Helvetica, sans-serif;
   height: 100vh;
   background-color: rgb(146, 146, 146);
+}
+
+.main {
+  transform: scale(1);
 }
 
 /* Phone container */
@@ -111,27 +116,89 @@ body {
 }
 
 /* App inside the mockup */
-.app {
-  border: 1px solid red;
-}
-
-/* Title */
 h1 {
   text-align: center;
   margin-top: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--black);
   font-size: 2.5rem;
 }
 
 #user-input {
   padding: 0.75rem;
-  margin-bottom: 0.75rem;
-  width: 100%;
+  margin: 0 auto;
+  display: block;
+  width: 85%;
   border: none;
   border-bottom: 2px solid var(--black);
   background: transparent;
-  color: var(--black);
   outline: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  width: 5.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+button:active {
+  background-color: #666;
+}
+
+#results-div {
+  margin-top: 0.8rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.info-box {
+  transform: scale(0.9);
+  margin-top: 4rem;
+  padding: 0.5rem;
+  background-color: #f0f0f0;
+  border-radius: 0.5rem;
+  border: 1px solid red;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+.info-text {
+  font-size: 0.9rem;
+}
+
+/* Hide element */
+.hidden {
+  display: none;
+}
+
+/* Removes the arrows on the side of the input: Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox specific*/
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
