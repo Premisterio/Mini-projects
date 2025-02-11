@@ -1,1 +1,137 @@
-/* Add font, css reset */
+/* TODO: add font, hint for the user and footer */
+
+/* Color palette */
+:root {
+  --grey: #ffffff1a;
+  --black: #000000;
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(146, 146, 146);
+}
+
+/* Phone container */
+.phone-outline {
+  background-color: var(--black);
+  border-radius: 2rem;
+  width: 18rem;
+  height: 32rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0rem 0.25rem 0.625rem rgba(0, 0, 0, 0.5),
+    inset 0rem 0.25rem 0.5rem var(--grey);
+  border: 0.2rem solid var(--grey);
+}
+
+/* Phone speaker lip */
+.phone-lip {
+  background-color: var(--black);
+  width: 7rem;
+  height: 1.1rem;
+  position: absolute;
+  top: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Screen */
+.phone-monitor {
+  background: linear-gradient(to bottom, #ffffff, #dedede);
+  width: 16rem;
+  height: 30rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  z-index: 2;
+  box-shadow: inset 0rem 1.25rem 2.5rem rgba(0, 0, 0, 0.3);
+}
+
+/* Left side Buttons */
+.side-button-top {
+  position: absolute;
+  left: -0.3rem;
+  top: 3.5rem;
+  width: 0.2rem;
+  height: 1.5rem;
+  background: var(--black);
+  border-radius: 0.3125rem;
+}
+
+.side-button-middle {
+  position: absolute;
+  left: -0.3rem;
+  top: 6rem;
+  width: 0.2rem;
+  height: 2rem;
+  background: var(--black);
+  border-radius: 0.3rem;
+}
+
+.side-button-bottom {
+  position: absolute;
+  left: -0.3rem;
+  width: 0.2rem;
+  top: 8.5rem;
+  height: 2rem;
+  background: var(--black);
+  border-radius: 0.3rem;
+}
+
+/* Right power button */
+.volume-button {
+  position: absolute;
+  right: -0.3rem;
+  top: 6rem;
+  width: 0.2rem;
+  height: 3.7rem;
+  background: var(--black);
+  border-radius: 0.3rem;
+}
+
+/* App inside the mockup */
+.app {
+  border: 1px solid red;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--black);
+  font-size: 2.5rem;
+}
+
+#user-input {
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--black);
+  background: transparent;
+  color: var(--black);
+  outline: none;
+  font-size: 1rem;
+}

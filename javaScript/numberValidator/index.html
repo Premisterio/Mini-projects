@@ -3,16 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>US Number Validator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    
-    <div class="container">
-        <h1>Number Validator</h1>
-        <input type="text" id="number" placeholder="Enter a number">
-    </div>
-    
+    <main class="main">
+        <div class="phone-outline">
+            <div class="phone-lip"></div>
+            <div class="phone-monitor">
+                <div class="app">
+                    <h1>US Number Validator</h1>
+                    <input id="user-input" type="number">
+                    <button id="check-btn">Check</button>
+                    <button id="clear-btn">Clear</button>
+                    <p id="results-div">Results will be displayed here</p>
+                </div>
+            </div>
+            <div class="side-button-top"></div>
+            <div class="side-button-middle"></div>
+            <div class="side-button-bottom"></div>
+            <div class="volume-button"></div>
+        </div>
+        
+    </main>
+    <!-- TODO:
+    - add hint for the user
+    - add footer
+    -->
     <script src="script.js"></script>
 </body>
 </html>
