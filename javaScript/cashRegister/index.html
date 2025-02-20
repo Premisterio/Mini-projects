@@ -6,8 +6,44 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Cash Register</title>
 </head>
-
 <body>
+    <!-- 
+     🚨🚨 code by chatGPT
+     🚨   refractor later!!!
+    -->
+    <!-- Main container centers 2 containers within in the center + padding -->
+    <main class="main-container">
+        <h1>Cash Register Project</h1>
+        
+        <div class="cash-register-container">
+            <!-- Cash register container left side -->
+            <div class="cash-drawer">
+                <p id="price">Total: $9.99</p>
+                
+                <div class="drawer-details">
+                    <p><strong>Change in drawer</strong></p>
+                    <p>Pennies: $0.93</p>
+                    <p>Nickels: $2.05</p>
+                    <p>Dimes: $2.7</p>
+                    <p>Quarters: $3.25</p>
+                    <p>Ones: $90</p>
+                    <p>Fives: $55</p>
+                    <p>Tens: $20</p>
+                    <p>Twenties: $60</p>
+                    <p>Hundreds: $100</p>
+                </div>
+            </div> 
+
+            <!-- Input/result container right side -->
+            <div class="input-section">
+                <input type="number" placeholder="Enter amount due" class="input-field">
+                <button class="purchase-button">Purchase</button>
+                <p>Change:</p>
+                <p class="result-text">Result here</p>
+            </div>
+        </div>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
