@@ -1,11 +1,18 @@
-/* 🚨🚨🚨 WARNING - CODE BY CHATGPT
-    🚨🚨  REFRACTOR LATER
-*/
+/* Google Font - Tinos Static  */
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-/* General Page Styling */
+/* Color palette */
+:root {
+  --ultra-light: #fbffe4;
+  --light: #a3d1c6;
+  --regular: #b3d8a8;
+  --accent: #3d8d7a;
+  --git-purple: #6e5494;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: "Tinos", Helvetica, sans-serif;
+  background-color: var(--ultra-light);
   margin: 0;
   padding: 0;
   display: flex;
@@ -14,84 +21,87 @@ body {
   height: 100vh;
 }
 
-/* Main Container */
 .main-container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--light);
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  box-shadow: 0rem 0rem 0.625rem rgba(0, 0, 0, 0.1);
   width: 80%;
-  max-width: 900px;
+  max-width: 56.25rem;
   text-align: center;
 }
 
-/* Cash Register Layout */
-.cash-register-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  gap: 20px;
+.main-container h1 {
+  font-weight: 900;
+  font-size: 2.25rem;
 }
 
-/* Cash Drawer Section (Left) */
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  gap: 1.25rem;
+}
+
 .cash-drawer {
   flex: 1;
-  background-color: #e0e0e0;
-  padding: 15px;
-  border-radius: 8px;
+  background-color: var(--regular);
+  padding: 0.94rem;
+  border-radius: 0.5rem;
 }
 
 .cash-drawer #price {
-  background-color: #4a4a4a;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
+  background-color: var(--ultra-light);
+  color: black;
+  padding: 0.625rem;
+  border-radius: 0.32rem;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
 .drawer-details {
-  background-color: #4a4a4a;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 10px;
+  background-color: var(--ultra-light);
+  color: black;
+  padding: 0.625rem;
+  border-radius: 0.2rem;
+  margin-top: 0.625rem;
   text-align: left;
 }
 
-/* Input Section (Right) */
-.input-section {
+.input-container {
   flex: 1;
-  background-color: #e0e0e0;
-  padding: 15px;
-  border-radius: 8px;
+  background-color: var(--regular);
+  padding: 0.94rem;
+  border-radius: 0.5rem;
   text-align: center;
 }
 
 .input-field {
   width: 80%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding: 0.625rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0.32rem;
+  background-color: var(--ultra-light);
+  border: 0.0625rem solid #ccc;
 }
 
 .purchase-button {
   width: 85%;
-  padding: 10px;
-  background-color: #4a4a4a;
-  color: white;
+  padding: 0.625rem;
+  background-color: var(--accent);
+  color: black;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.32rem;
   cursor: pointer;
 }
 
 .purchase-button:hover {
-  background-color: #333;
+  background-color: var(--git-purple);
 }
 
 .result-text {
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
