@@ -1,4 +1,4 @@
-let price = 1.87;
+const price = 1.87;
 let cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
@@ -11,50 +11,106 @@ let cid = [
   ['ONE HUNDRED', 100]
 ];
 
-const cash = document.getElementById("cash");
-const purchaseBtn = document.getElementById("purchase-btn");
-const changeDue = document.getElementById("change-due");
+const denominations = [
+  ['ONE HUNDRED', 10000],
+  ['TWENTY', 2000],
+  ['TEN', 1000],
+  ['FIVE', 500],
+  ['ONE', 100],
+  ['QUARTER', 25],
+  ['DIME', 10],
+  ['NICKEL', 5],
+  ['PENNY', 1]
+];
+
+const priceScreen = document.getElementById('price');
+const cashDrawerDisplay = document.querySelector('.drawer-details');
+const displayChangeDue = document.getElementById('change-due');
+const cash = document.getElementById('cash');
+const purchaseBtn = document.getElementById('purchase-btn');
 
 
-// Alerts:
-// - If cash input is less than the price, alert the user.
-// - If there's not enough cash in the drawer, display "Status: INSUFFICIENT_FUNDS"
-// - If the cash in the drawer matches exactly the change due, display "Status: CLOSED"
-// - Otherwise, return change in highest-to-lowest denominations with "Status: OPEN"
+function formatResult(status, change) {
+  displayChangeDue.innerHTML = `<p>Status: ${status}</p>` +
+    change.map(([name, amount]) => `<p>${name}: $${amount}</p>`).join('');
+}
 
+function calculateChange(changeDue, cashInDrawer) {
+  let change = [];
+  for (let [name, value] of denominations) {
+    let available = cashInDrawer[name];
+    let amountToGive = Math.min(available, Math.floor(changeDue / value) * value);
+    if (amountToGive > 0) {
+      change.push([name, amountToGive / 100]);
+      changeDue -= amountToGive;
+    }
+  }
+  return changeDue === 0 ? change : null;
+}
 
-const handlePurchase = () => {
-  const cashGiven = parseFloat(cash.value);
+function checkCashRegister() {
+  const cashInCents = Math.round(Number(cash.value) * 100);
+  const priceInCents = Math.round(price * 100);
 
-  if (isNaN(cashGiven) || cashGiven < price) {
+  if (cashInCents < priceInCents) {
     alert('Customer does not have enough money to purchase the item');
+    cash.value = '';
     return;
   }
-  calculateChange(cashGiven);
-};
 
-// fix this 
-const calculateChange = (cashGiven) => {
-  let changeDue = Math.round((cashGiven - price) * 100);
-  let totalCID = Math.round(cid.reduce((sum, [, amount]) => sum + amount, 0) * 100);
+  if (cashInCents === priceInCents) {
+    displayChangeDue.innerHTML = '<p>No change due - customer paid with exact cash</p>';
+    cash.value = '';
+    return;
+  }
+
+  let changeDue = cashInCents - priceInCents;
+  let cashInDrawer = Object.fromEntries(cid.map(([name, amount]) => [name, Math.round(amount * 100)]));
+  let totalCID = Object.values(cashInDrawer).reduce((sum, amount) => sum + amount, 0);
 
   if (totalCID < changeDue) {
-    changeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>';
+    displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>';
     return;
   }
 
-  // doesn't work
+  let change = calculateChange(changeDue, cashInDrawer);
+
+  if (!change) {
+    displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>';
+    return;
+  }
+
   if (totalCID === changeDue) {
-    changeDue.innerHTML = '<p>Status: CLOSED</p>';
-    // No change due - customer paid with exact cash
-    return;
+    formatResult('CLOSED', cid);
+  } else {
+    formatResult('OPEN', change);
+    updateCashDrawer(change);
   }
+}
 
-  // TODO: Implement logic to return change in the correct denominations
-  // change innerHTML to textContext
-};
+function updateCashDrawer(change) {
+  change.forEach(([name, amount]) => {
+    let target = cid.find(([denomination]) => denomination === name);
+    if (target) {
+      target[1] = parseFloat((target[1] - amount).toFixed(2));
+    }
+  });
+  updateUI();
+}
 
-purchaseBtn.addEventListener("click", handlePurchase);
-cash.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") handlePurchase()
+
+function updateUI() {
+  cash.value = '';
+  priceScreen.textContent = `Total: $${price}`;
+
+  cashDrawerDisplay.innerHTML = `<p><strong>Change in the drawer:</strong></p>` +
+    cid.map(([name, amount]) => `<p>${name}: $${amount.toFixed(2)}</p>`).join('');
+}
+
+
+purchaseBtn.addEventListener('click', checkCashRegister);
+cash.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') checkCashRegister(); 
 });
+
+updateUI();
