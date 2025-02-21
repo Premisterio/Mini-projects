@@ -104,7 +104,6 @@ body {
   font-size: 1.2rem;
 }
 
-/* Removes number input arrows */
 .input-field::-webkit-inner-spin-button,
 .input-field::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -143,7 +142,6 @@ body {
   margin-top: 1rem;
 }
 
-/* FIX THE FOOTER */
 /* Footer */
 footer {
   padding: 0.7rem 0;
@@ -182,5 +180,8 @@ footer {
   }
   .input-container {
     margin-top: 1.25rem;
+  }
+  footer {
+    display: none;
   }
 }

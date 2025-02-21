@@ -29,7 +29,6 @@ const displayChangeDue = document.getElementById('change-due');
 const cash = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
 
-
 function formatResult(status, change) {
   displayChangeDue.innerHTML = `<p>Status: ${status}</p>` +
     change.map(([name, amount]) => `<p>${name}: $${amount}</p>`).join('');
@@ -81,7 +80,12 @@ function checkCashRegister() {
   }
 
   if (totalCID === changeDue) {
-    formatResult('CLOSED', cid);
+
+    let closedChange = cid
+      .filter(([name, amount]) => amount > 0)
+      .reverse();
+
+    formatResult('CLOSED', closedChange);
   } else {
     formatResult('OPEN', change);
     updateCashDrawer(change);
@@ -98,7 +102,6 @@ function updateCashDrawer(change) {
   updateUI();
 }
 
-
 function updateUI() {
   cash.value = '';
   priceScreen.textContent = `Total: $${price}`;
@@ -106,7 +109,6 @@ function updateUI() {
   cashDrawerDisplay.innerHTML = `<p><strong>Change in the drawer:</strong></p>` +
     cid.map(([name, amount]) => `<p>${name}: $${amount.toFixed(2)}</p>`).join('');
 }
-
 
 purchaseBtn.addEventListener('click', checkCashRegister);
 cash.addEventListener('keydown', (e) => {
