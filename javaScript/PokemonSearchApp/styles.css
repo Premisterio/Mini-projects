@@ -1,0 +1,50 @@
+/* Google Font - Farsan Static */
+@import url("https://fonts.googleapis.com/css2?family=Farsan&display=swap");
+
+/* Color palette */
+:root {
+  --background: #a4a4a4;
+  --git-purple: #6e5494;
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background + font */
+body {
+  font-size: 1.2rem;
+  font-family: "Farsan", Helvetica, sans-serif;
+  background-color: var(--background);
+}
+
+/* Centering the app */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* App container */
+.app {
+  padding: 2rem;
+  background-color: var(--git-purple);
+  border-radius: 0.6rem;
+}
+
+/* Stats container */
+.pokemon-info {
+  background-color: #ccc;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Pushes elements to the sides */
+  align-items: center; /* Aligns them vertically */
+}
