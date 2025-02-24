@@ -143,6 +143,8 @@ body {
 }
 
 /* Footer */
+/* TODO: fix the footer when I will actually learn CSS */
+/* Issue: footer overflows in portrait mode and on small aspect ratios */
 footer {
   padding: 0.7rem 0;
   background-color: transparent;
@@ -181,6 +183,7 @@ footer {
   .input-container {
     margin-top: 1.25rem;
   }
+  /* This is not the solution lol */
   footer {
     display: none;
   }
