@@ -12,7 +12,7 @@ const pokemonId = document.getElementById("pokemon-id");
 const pokemonWeight = document.getElementById("weight");
 const pokemonHeight = document.getElementById("height");
 const imageContainer = document.querySelector(".sprite-container");
-const tags = document.querySelector(".tags");
+const types = document.getElementById("types");
 
 const cleanUserInput = (input) => {
     return input.trim().replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
@@ -31,14 +31,14 @@ const getPokemon = async () => {
 
         const data = await res.json();
 
-        // Set Pokémon info
+        // Set info
         pokemonName.textContent = data.name.toUpperCase();
-        pokemonId.textContent = data.id;
-        pokemonWeight.textContent = data.weight;
-        pokemonHeight.textContent = data.height;
+        pokemonId.textContent = `#${data.id}`;
+        pokemonWeight.textContent = `Weight: ${data.weight}`;
+        pokemonHeight.textContent = `Height: ${data.height}`;
         
-        // Set Pokémon image
-        imageContainer.innerHTML = `<img src="${data.sprites.front_default}" alt="${data.name}" />`;
+        // Set image
+        imageContainer.innerHTML = `<img id="sprite" src="${data.sprites.front_default}" alt="${data.name}" />`;
 
         // Set table stats
         hp.textContent = data.stats[0].base_stat;
@@ -48,9 +48,9 @@ const getPokemon = async () => {
         specialDefense.textContent = data.stats[4].base_stat;
         speed.textContent = data.stats[5].base_stat;
 
-        // Set types (tags)
-        tags.innerHTML = data.types
-            .map(type => `<span class="tag">${type.type.name.toUpperCase()}</span>`)
+        // Set types
+        types.innerHTML = data.types
+            .map(tag => `<span class="tag ${tag.type.name.toLowerCase()}">${tag.type.name.toUpperCase()}</span>`)
             .join('');
 
     } catch (err) {
@@ -71,7 +71,7 @@ const resetDisplay = () => {
     specialAttack.textContent = "";
     specialDefense.textContent = "";
     speed.textContent = "";
-    tags.innerHTML = "";
+    types.innerHTML = "";
 };
 
 formSubmit.addEventListener("submit", (e) => {
