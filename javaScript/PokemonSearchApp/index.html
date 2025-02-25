@@ -11,41 +11,74 @@
 <body>
     <main class="main-container">
         <div class="app">
-            <h1>Pokemon Search App</h1>
-    
-            <label for="search-input">Enter Pokemon ID:</label>
-            <input id="search-input" type="number" placeholder="Enter Pokemon ID or name">
-            
-            <button id="search-button" aria-label="Search for a Pokemon by ID or name">Search Pokemon</button>
-            
-            <article class="pokemon-info">
-                <fieldset>
-                    <legend>Pokemon Information</legend>
-                    <div class="header">
-                        <h2>Base</h2>
-                        <h2>Stats</h2>
+
+
+            <form class="search-form">
+
+                <h1>Pokémon Search App</h1>
+                <label for="input-group">Search for Pokémon Name or ID:</label>
+
+                <div class="input-group">
+                    <input type="text" id="search-input" placeholder="Enter name or ID">
+                    <button id="search-button" aria-label="Search for a Pokemon by ID or name">Search</button>
+                </div>
+
+            </form>
+
+
+            <div class="content-container">
+                <table>
+                    <tr>
+                        <th>Base</th>
+                        <th>Stats</th>
+                    </tr>
+                    <tr>
+                        <td>HP:</td>
+                        <td id="hp"></td>
+                    </tr>
+                    <tr>
+                        <td>Attack:</td>
+                        <td id="attack"></td>
+                    </tr>
+                    <tr>
+                        <td>Defense:</td>
+                        <td id="defense"></td>
+                    </tr>
+                    <tr>
+                        <td>Special Attack:</td>
+                        <td id="special-attack"></td>
+                    </tr>
+                    <tr>
+                        <td>Special Defense:</td>
+                        <td id="special-defense"></td>
+                    </tr>
+                    <tr>
+                        <td>Speed:</td>
+                        <td id="speed"></td>
+                    </tr>
+
+                </table>
+
+                <div class="pokemon-info">
+                    <div class="name-id">
+                        <span id="pokemon-name">name</span>
+                        <span id="pokemon-id">id</span>
                     </div>
-                    <p id="pokemon-name">Name:</p>
-                    <p id="pokemon-id">ID:</p>
-                    <p id="weight">Weight:</p>
-                    <p id="height">Height:</p>
-                    <p id="Types">Types:</p>
-                    <p id="hp">Health points:</p>
-                    <p id="attack">Attack:</p>
-                    <p id="defense">Defense:</p>
-                    <p id="special-attack">Special Attack:</p>
-                    <p id="special-defense">Special Defense:</p>
-                    <p id="speed">Speed:</p>
-                </fieldset>
-            </article>
+                    <div class="weight-height">
+                        <span id="weight">w</span>
+                        <span id="height">h</span>
+                    </div>
+                    <div class="sprite-container">
+                        <img src="INSERT JS HERE" alt="">
+                    </div>
+                    <div class="tags">
+                        <span class="type">type</span>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-        
-        <footer>
-            <p class="footer-p">
-                Designed by Volodymyr Hrehul - 
-                <a target="_blank" class="footer-a" href="https://github.com/Premisterio">GitHub</a>
-            </p>
-        </footer>
     </main>
     
     <script src="script.js"></script>
