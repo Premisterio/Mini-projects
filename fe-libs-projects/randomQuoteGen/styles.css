@@ -1,1 +1,7 @@
-/* Choose font */
+body {
+  background-color: #f0f8ff;
+}
+
+#quote-box {
+  max-width: 600px;
+}
