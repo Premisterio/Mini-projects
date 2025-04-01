@@ -1,14 +1,7 @@
 $(document).ready(function () {
-  const quotes = [
-    { text: "Be yourself; everyone else is already taken.", author: "Oscar Wilde" },
-    { text: "Two things are infinite: the universe and human stupidity.", author: "Albert Einstein" },
-    { text: "So many books, so little time.", author: "Frank Zappa" },
-    { text: "You only live once, but if you do it right, once is enough.", author: "Mae West" },
-    { text: "In the middle of every difficulty lies opportunity.", author: "Albert Einstein" },
-    { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" }
-  ];
-
-
+  let firstTime = true;
+  let quotes = [];
+  
   const colorThemes = [
     {
       background: 'hsl(200, 70%, 80%)',
@@ -56,13 +49,22 @@ $(document).ready(function () {
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
-  function setUI() {
+  async function setUI() {
+
+    if (quotes.length === 0) return;
+
     const quote = getRandomItem(quotes);
     const theme = getRandomItem(colorThemes);
 
     // Text animation
     $('.quote-text, .quote-author').animate({ opacity: 0 }, 300, function () {
-      $('#text').text(quote.text);
+      const quoteText = quote.quote;
+      $('#text').text(quoteText);
+      if (quoteText.length > 120) {
+        $('#text').removeClass('fs-1').addClass('fs-4');
+      } else {
+        $('#text').removeClass('fs-4').addClass('fs-1');
+      }
       $('#author').text(`— ${quote.author}`);
       $('.quote-text, .quote-author').animate({ opacity: 1 }, 300);
     });
@@ -70,7 +72,7 @@ $(document).ready(function () {
     // Background gradient
     $('body').css('background', `linear-gradient(135deg, ${theme.background}, white)`);
 
-    // Quote color
+    // Quote
     $('.quote-text, .quote-author').css('color', theme.text);
 
     // Btn + icon styles
@@ -79,26 +81,50 @@ $(document).ready(function () {
       borderColor: theme.background
     });
 
-    // Twitter share link
+    // Twitter link
     $('#tweet-quote').attr(
       'href',
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${quote.text}" — ${quote.author}`)}`
     );
 
-    // Fade in quote box if hidden
-    $('#quote-box').fadeTo(600, 1);
-    // Set quote icon color to match text (inside box)
+    // Icon colors
     $('.bi-quote').css('color', theme.text);
-    // Set other icons (tweet + refresh) to also use the text color for better contrast on soft button background
+
+    // Tweet + refresh
     $('.bi-twitter-x, .bi-arrow-clockwise').css('color', "#ffffff");
-    // Footer styles
+    
+    // Footer
     $('footer').css('color', theme.text);
     $('.footer-a').css('color', theme.text);
+
+    // First time fade-in
+    if (firstTime) {
+      $('#quote-box, footer, .btn, .bi').fadeTo(600, 1);
+      firstTime = false;
+    }
   }
 
   // Initial quote
   setUI();
 
-  // Event: next quote
-  $('#new-quote').click(setQuote);
+  // Next quote
+  $('#new-quote').click(setUI);
+
+  async function loadQuotes() {
+    try {
+      const response = await fetch('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json');
+      const data = await response.json();
+      quotes = data.quotes;
+      setUI();
+    } catch (error) {
+      $('#text').text('Failed to load quotes 😞');
+      $('#author').text('');
+      console.error('Error loading quotes:', error);
+    }
+  }
+
+  // Init
+  loadQuotes();
+
+  $('#new-quote').click(() => setUI());
 });
