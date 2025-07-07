@@ -1,6 +1,6 @@
 const { useState, useEffect } = React;
 
-const defaultMarkdown = ` Heading H1
+const defaultMarkdown = ` # Heading H1
 ## Subheading H2
 [Link example](https://www.freecodecamp.org)
 \`Inline code example\`
