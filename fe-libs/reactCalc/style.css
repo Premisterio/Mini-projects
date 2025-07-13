@@ -1,3 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #e5eaf5;
+}
+
 /* Footer github icon&text */
 .github-text {
   color: #6e5494;
@@ -9,4 +20,176 @@
 
 .github-text:active {
   color: #a08cd9;
+}
+
+/* Calculator grid styles */
+.calculator-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  grid-template-areas:
+    "header header header header"
+    "output output output output"
+    "ac ac del percent"
+    "seven eight nine multiply"
+    "four five six plus"
+    "one two three minus"
+    "decimal zero equals equals";
+}
+
+.calculator-header {
+  grid-area: header;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.calculator-output {
+  grid-area: output;
+  background: #343a40;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.previous-operand {
+  font-size: 1rem;
+  color: #adb5bd;
+  min-height: 1.5rem;
+}
+
+.current-operand {
+  font-size: 2rem;
+  font-weight: bold;
+  min-height: 2.5rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.calculator-button {
+  min-height: 60px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.calculator-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.calculator-button:active {
+  transform: translateY(0);
+  filter: contrast(0.5);
+}
+
+.btn-ac {
+  grid-area: ac;
+}
+.btn-del {
+  grid-area: del;
+}
+.btn-percent {
+  grid-area: percent;
+}
+.btn-multiply {
+  grid-area: multiply;
+}
+.btn-seven {
+  grid-area: seven;
+}
+.btn-eight {
+  grid-area: eight;
+}
+.btn-nine {
+  grid-area: nine;
+}
+.btn-plus {
+  grid-area: plus;
+}
+.btn-four {
+  grid-area: four;
+}
+.btn-five {
+  grid-area: five;
+}
+.btn-six {
+  grid-area: six;
+}
+.btn-minus {
+  grid-area: minus;
+}
+.btn-one {
+  grid-area: one;
+}
+.btn-two {
+  grid-area: two;
+}
+.btn-three {
+  grid-area: three;
+}
+.btn-decimal {
+  grid-area: decimal;
+}
+.btn-zero {
+  grid-area: zero;
+}
+.btn-equals {
+  grid-area: equals;
+}
+
+.btn-operator {
+  background: #007bff;
+  color: white;
+}
+
+.btn-operator:hover {
+  background: #0056b3;
+  color: white;
+}
+
+.btn-number {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-number:hover {
+  background: #545b62;
+  color: white;
+}
+
+.btn-function {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-function:hover {
+  background: #c82333;
+  color: white;
+}
+
+.btn-equals-special {
+  background: #28a745;
+  color: white;
+}
+
+.btn-equals-special:hover {
+  background: #218838;
+  color: white;
 }
