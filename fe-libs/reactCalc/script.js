@@ -1,7 +1,27 @@
+import { useReducer } from "react";
+
 const { useState, useEffect } = React;
 
+const ACTIONS = {
+  ADD_DIGIT: "add-digit",
+  CHOOSE_OPERATION: "choose-operation",
+  CLEAR: "clear",
+  DELETE_DIGIT: "delete-digit",
+  EVALUEATE: "evaluate"
+}
+
+function reducer(state, { type, payload }) {
+  switch (type) {
+    case ACTIONS.ADD_DIGIT:
+      return {
+        ...state,
+        currentOperand: `${currentOperand || "" }${payload.digit}`
+      }
+  }
+}
+
 function App() {
-  
+  const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(reducer, {})
 
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -12,8 +32,8 @@ function App() {
                 </div>
                 
                 <div class="calculator-output">
-                    <div class="previous-operand"></div>
-                    <div class="current-operand">0</div>
+                    <div class="previous-operand">{previousOperand} {operation}</div>
+                    <div class="current-operand">{currentOperand}</div>
                 </div>
                 
                 <button class="calculator-button btn-ac btn-function">AC</button>
