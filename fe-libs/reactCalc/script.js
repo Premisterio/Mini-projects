@@ -1,13 +1,11 @@
-import { useReducer } from "react";
-
-const { useState, useEffect } = React;
+const { useState, useEffect, useReducer } = React;
 
 const ACTIONS = {
   ADD_DIGIT: "add-digit",
   CHOOSE_OPERATION: "choose-operation",
   CLEAR: "clear",
   DELETE_DIGIT: "delete-digit",
-  EVALUEATE: "evaluate"
+  EVALUATE: "evaluate"
 }
 
 function reducer(state, { type, payload }) {
