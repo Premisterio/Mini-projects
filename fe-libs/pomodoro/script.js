@@ -12,15 +12,15 @@ function App() {
       <div className="text-center py-4">
         <h1 className="main-title">Pomodoro Timer</h1>
       </div>
-
+      
       {/* Main Container */}
-      <div className="flex-grow-1 d-flex align-items-center justify-content-center px-3">
+      <div className="d-flex align-items-center justify-content-center px-3">
         <div className="main-container">
           {/* Current Session Header */}
           <h2 className="session-label text-center mb-4">Current Session</h2>
 
           {/* Timer Controls Section */}
-          <div className="d-flex align-items-center justify-content-center mb-5">
+          <div className="d-flex align-items-center justify-content-center mb-4">
             {/* Play Button */}
             <button className="control-btn me-3" onClick={() => setIsRunning(!isRunning)}>
               <svg
@@ -55,7 +55,7 @@ function App() {
                 </svg>
               </button>
               <button
-                className="control-btn"
+                className="control-btn control-btn-reset"
                 onClick={() => {
                   setIsRunning(false)
                   setTimeLeft("25:00")
