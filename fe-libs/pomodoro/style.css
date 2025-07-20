@@ -1,0 +1,217 @@
+/* Google font import */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+
+/* Variables */
+:root {
+  --github-text: #6e5494;
+  --github-text-hover: #8b6bb7;
+  --primary-1: #444cf7;
+  --secondary: #e5e5f7;
+  --timer-red: #dc3545;
+}
+
+body {
+  font-family: "Merriweather", serif;
+  background-color: var(--secondary);
+  background-image: radial-gradient(
+    var(--primary-1) 0.5px,
+    var(--secondary) 0.5px
+  );
+  background-size: 10px 10px;
+}
+
+/* Main Title */
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* Main Container */
+.main-container {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    padding: 3rem;
+  }
+}
+
+/* Session Label */
+.session-label {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .session-label {
+    font-size: 2rem;
+  }
+}
+
+/* Timer Display */
+.timer-display {
+  background: #f8f9fa;
+  border: 2px solid var(--primary-1);
+  border-radius: 1.5rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .timer-display {
+    padding: 2rem 3rem;
+    margin: 0 2rem;
+  }
+}
+
+.timer-text {
+  color: var(--timer-red);
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-family: "Courier New", monospace;
+}
+
+@media (min-width: 768px) {
+  .timer-text {
+    font-size: 3.5rem;
+  }
+}
+
+/* Control Buttons */
+.control-btn {
+  background: transparent;
+  border: none;
+  color: #666;
+  padding: 0.75rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-btn:hover {
+  background: #f8f9fa;
+  color: var(--primary-1);
+}
+
+/* Control Titles */
+.control-title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #666;
+}
+
+@media (min-width: 768px) {
+  .control-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Length Controls */
+.length-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary-1);
+  border-radius: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  gap: 0.5rem;
+}
+
+.control-btn-small {
+  border-radius: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-color: var(--primary-1) !important;
+  color: var(--primary-1) !important;
+}
+
+.control-btn-small:hover {
+  background-color: var(--primary-1) !important;
+  color: white !important;
+}
+
+.length-display {
+  background: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  color: #333;
+  min-width: 80px;
+  text-align: center;
+  margin: 0 0.5rem;
+}
+
+/* Footer */
+.footer {
+  opacity: 0.85;
+}
+
+.github-text {
+  color: var(--github-text);
+}
+
+.github-text:hover {
+  color: var(--github-text-hover);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .timer-display {
+    margin: 0 0.5rem;
+  }
+
+  .main-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .length-control {
+    padding: 0.5rem;
+  }
+
+  .length-display {
+    min-width: 70px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
