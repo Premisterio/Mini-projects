@@ -1,10 +1,90 @@
-const { useState, useEffect } = React;
+const { useState, useEffect, useRef } = React;
 
 function App() {
-  const [breakLength, setBreakLength] = useState(5)
-  const [sessionLength, setSessionLength] = useState(25)
-  const [timeLeft, setTimeLeft] = useState("25:00")
-  const [isRunning, setIsRunning] = useState(false)
+  const [sessionLength, setSessionLength] = useState(25);
+  const [breakLength, setBreakLength] = useState(5);
+  const [timeLeft, setTimeLeft] = useState(25 * 60);
+  const [isRunning, setIsRunning] = useState(false);
+  const [mode, setMode] = useState("Session"); // or "Break"
+  const intervalRef = useRef(null);
+  const audioRef = useRef(null);
+
+  // Format time (mm:ss)
+  const formatTime = (seconds) => {
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  };
+
+  // Timer logic
+  useEffect(() => {
+    if (!isRunning) return;
+
+    intervalRef.current = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev === 0) {
+          // Play beep sound when timer reaches 00:00
+          if (audioRef.current) {
+            audioRef.current.currentTime = 0;
+            audioRef.current.play();
+          }
+          
+          const nextMode = mode === "Session" ? "Break" : "Session";
+          const nextTime = nextMode === "Session" ? sessionLength * 60 : breakLength * 60;
+          setMode(nextMode);
+          return nextTime;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(intervalRef.current);
+  }, [isRunning, breakLength, sessionLength, mode]);
+
+  // Reset handler
+  const handleReset = () => {
+    setIsRunning(false);
+    clearInterval(intervalRef.current);
+    setSessionLength(25);
+    setBreakLength(5);
+    setTimeLeft(25 * 60);
+    setMode("Session");
+    
+    // Stop and rewind audio
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  };
+
+  // Button click handlers with limits (1-60)
+  const increaseSession = () => {
+    if (sessionLength < 60) {
+      const newLen = sessionLength + 1;
+      setSessionLength(newLen);
+      if (!isRunning && mode === "Session") setTimeLeft(newLen * 60);
+    }
+  };
+
+  const decreaseSession = () => {
+    if (sessionLength > 1) {
+      const newLen = sessionLength - 1;
+      setSessionLength(newLen);
+      if (!isRunning && mode === "Session") setTimeLeft(newLen * 60);
+    }
+  };
+
+  const increaseBreak = () => {
+    if (breakLength < 60) {
+      setBreakLength(breakLength + 1);
+    }
+  };
+
+  const decreaseBreak = () => {
+    if (breakLength > 1) {
+      setBreakLength(breakLength - 1);
+    }
+  };
 
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -12,17 +92,16 @@ function App() {
       <div className="text-center py-4">
         <h1 className="main-title">Pomodoro Timer</h1>
       </div>
-      
+
       {/* Main Container */}
       <div className="d-flex align-items-center justify-content-center px-3">
         <div className="main-container">
-          {/* Current Session Header */}
-          <h2 className="session-label text-center mb-4">Current Session</h2>
+          <h2 id="timer-label" className="session-label text-center mb-4">Current Session</h2>
 
           {/* Timer Controls Section */}
           <div className="d-flex align-items-center justify-content-center mb-4">
             {/* Play Button */}
-            <button className="control-btn me-3" onClick={() => setIsRunning(!isRunning)}>
+            <button id="start_stop" className="control-btn me-3" onClick={() => setIsRunning(!isRunning)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="36"
@@ -37,7 +116,7 @@ function App() {
 
             {/* Timer Display */}
             <div className="timer-display">
-              <span className="timer-text">{timeLeft}</span>
+              <span id="time-left" className="timer-text">{formatTime(timeLeft)}</span>
             </div>
 
             {/* Pause and Reset Buttons */}
@@ -54,13 +133,18 @@ function App() {
                   <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5" />
                 </svg>
               </button>
-              <button
-                className="control-btn control-btn-reset"
-                onClick={() => {
-                  setIsRunning(false)
-                  setTimeLeft("25:00")
-                }}
-              >
+              <button id="reset" className="control-btn control-btn-reset" onClick={() => {
+                setIsRunning(false);
+                setMode("Session");
+                setSessionLength(25);
+                setBreakLength(5);
+                setTimeLeft(25 * 60);
+                const audio = document.getElementById("beep");
+                if (audio) {
+                  audio.pause();
+                  audio.currentTime = 0;
+                }
+                }}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="36"
@@ -79,58 +163,32 @@ function App() {
             </div>
           </div>
 
-          {/* Break and Session Length Controls */}
+          {/* Break and Session Controls */}
           <div className="row g-4">
-            {/* Break Length */}
             <div className="col-12 col-md-6">
               <div className="text-center">
-                <h3 className="control-title mb-3">Break Length</h3>
+                <h3 id="break-label" className="control-title mb-3">Break Length</h3>
                 <div className="length-control">
-                  <button
-                    className="btn btn-outline-primary control-btn-small"
-                    onClick={() => setBreakLength(Math.max(1, breakLength - 1))}
-                  >
+                  <button id="break-decrement" className="btn btn-outline-primary control-btn-small" onClick={decreaseBreak}>
                     −
                   </button>
-                  <span className="length-display">{breakLength} min</span>
-                  <button
-                    className="btn btn-outline-primary control-btn-small"
-                    onClick={() => setBreakLength(breakLength + 1)}
-                  >
+                  <span id="break-length" className="length-display">{breakLength}</span>
+                  <button id="break-increment" className="btn btn-outline-primary control-btn-small" onClick={increaseBreak}>
                     +
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* Session Length */}
             <div className="col-12 col-md-6">
               <div className="text-center">
-                <h3 className="control-title mb-3">Session Length</h3>
+                <h3 id="session-label" className="control-title mb-3">Session Length</h3>
                 <div className="length-control">
-                  <button
-                    className="btn btn-outline-primary control-btn-small"
-                    onClick={() => {
-                      const newLength = Math.max(1, sessionLength - 1)
-                      setSessionLength(newLength)
-                      if (!isRunning) {
-                        setTimeLeft(`${newLength}:00`)
-                      }
-                    }}
-                  >
+                  <button id="session-decrement" className="btn btn-outline-primary control-btn-small" onClick={decreaseSession}>
                     −
                   </button>
-                  <span className="length-display">{sessionLength} min</span>
-                  <button
-                    className="btn btn-outline-primary control-btn-small"
-                    onClick={() => {
-                      const newLength = sessionLength + 1
-                      setSessionLength(newLength)
-                      if (!isRunning) {
-                        setTimeLeft(`${newLength}:00`)
-                      }
-                    }}
-                  >
+                  <span id="session-length" className="length-display">{sessionLength}</span>
+                  <button id="session-increment" className="btn btn-outline-primary control-btn-small" onClick={increaseSession}>
                     +
                   </button>
                 </div>
@@ -159,6 +217,13 @@ function App() {
           </a>
         </span>
       </footer>
+      
+      <audio 
+        id="beep" 
+        ref={audioRef}
+        src="https://cdn.freecodecamp.org/testable-projects-fcc/audio/BeepSound.wav" 
+        preload="auto"
+      />
     </div>
   );
 }
