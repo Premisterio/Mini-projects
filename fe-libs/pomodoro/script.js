@@ -102,27 +102,8 @@ function App() {
           <div className="d-flex align-items-center justify-content-center mb-4">
             {/* Play Button */}
             <button id="start_stop" className="control-btn me-3" onClick={() => setIsRunning(!isRunning)}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="36"
-                height="36"
-                fill="currentColor"
-                className="bi bi-play-fill"
-                viewBox="0 0 16 16"
-              >
-                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
-              </svg>
-            </button>
-
-            {/* Timer Display */}
-            <div className="timer-display">
-              <span id="time-left" className="timer-text">{formatTime(timeLeft)}</span>
-            </div>
-
-            {/* Pause and Reset Buttons */}
-            <div className="d-flex align-items-center ms-3">
-              <button className="control-btn me-2" onClick={() => setIsRunning(false)}>
-                <svg
+              {isRunning 
+              ? <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="36"
                   height="36"
@@ -131,8 +112,31 @@ function App() {
                   viewBox="0 0 16 16"
                 >
                   <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5m4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5" />
-                </svg>
-              </button>
+                </svg> 
+              : <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="36"
+                  height="36"
+                  fill="currentColor"
+                  className="bi bi-play-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                </svg>}
+            </button>
+
+            {/* Timer Display */}
+            <div className="timer-display">
+              <span
+                id="time-left"
+                className={`timer-text ${isRunning ? "running" : ""} ${mode === "Break" ? "break" : ""}`}
+              >
+                {formatTime(timeLeft)}
+              </span>
+            </div>
+
+            {/* Reset Buttons */}
+            <div className="d-flex align-items-center ms-3">
               <button id="reset" className="control-btn control-btn-reset" onClick={() => {
                 setIsRunning(false);
                 setMode("Session");
