@@ -96,7 +96,7 @@ function App() {
       {/* Main Container */}
       <div className="d-flex align-items-center justify-content-center px-3">
         <div className="main-container">
-          <h2 id="timer-label" className="session-label text-center mb-4">Current Session</h2>
+          <h2 id="timer-label" className="session-label text-center mb-4">{mode === "Session" ? "Current Session" : "Current Break"}</h2>
 
           {/* Timer Controls Section */}
           <div className="d-flex align-items-center justify-content-center mb-4">
