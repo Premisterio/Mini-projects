@@ -16,8 +16,8 @@ if (!$name || !$room_id || !$start_date || !$end_date) {
 
 $stmt = db()->prepare(
     'INSERT INTO reservations (room_id, name, start_date, end_date, status, note)
-     VALUES (?, ?, ?, ?, \'New\', ?)'
+     VALUES (?, ?, ?, ?, ?, ?)'
 );
-$stmt->execute([$room_id, $name, $start_date, $end_date, $note ?: null]);
+$stmt->execute([$room_id, $name, $start_date, $end_date, 'New', $note ?: null]);
 
 echo json_encode(['id' => (int)db()->lastInsertId()]);

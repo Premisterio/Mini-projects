@@ -2,7 +2,6 @@
 require '_db.php';
 header('Content-Type: application/json');
 
-// Підтримує як POST (форма), так і PUT (AJAX)
 $data = $_POST;
 if (empty($data)) {
     parse_str(file_get_contents('php://input'), $data);
@@ -22,20 +21,20 @@ if (!$id || !$name || !$start_date || !$end_date) {
     exit;
 }
 
-$allowed = ['New','Confirmed','Arrived','Checked Out','Expired'];
+$allowed = ['New', 'Confirmed', 'Arrived', 'Checked Out', 'Expired'];
 if (!in_array($status, $allowed, true)) {
     $status = 'New';
 }
 
-$sql = 'UPDATE reservations SET name=?, start_date=?, end_date=?, status=?, note=?';
+$sql    = 'UPDATE reservations SET name=?, start_date=?, end_date=?, status=?, note=?';
 $params = [$name, $start_date, $end_date, $status, $note ?: null];
 
 if ($room_id > 0) {
-    $sql .= ', room_id=?';
+    $sql     .= ', room_id=?';
     $params[] = $room_id;
 }
 
-$sql .= ' WHERE id=?';
+$sql     .= ' WHERE id=?';
 $params[] = $id;
 
 $stmt = db()->prepare($sql);

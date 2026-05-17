@@ -19,7 +19,7 @@ if ($id > 0) {
 <body>
 <form class="res-form" method="post" action="backend_update.php">
 
-    <h2>Edit Reservation</h2>
+    <h2>Edit Reservation #<?= $id ?></h2>
 
     <input type="hidden" name="id" value="<?= $id ?>">
 
@@ -31,24 +31,24 @@ if ($id > 0) {
 
     <div class="form-row">
         <div class="form-group">
-            <label>Start Date</label>
+            <label>Check-in</label>
             <input type="date" name="start_date"
                    value="<?= htmlspecialchars($res['start_date'] ?? '') ?>">
         </div>
         <div class="form-group">
-            <label>End Date</label>
+            <label>Check-out</label>
             <input type="date" name="end_date"
                    value="<?= htmlspecialchars($res['end_date'] ?? '') ?>">
         </div>
     </div>
 
     <div class="form-group">
-        <label for="status">Booking Status</label>
+        <label for="status">Status</label>
         <select id="status" name="status">
             <?php foreach (['New','Confirmed','Arrived','Checked Out','Expired'] as $s): ?>
-                <option value="<?= $s ?>" <?= ($res['status'] ?? '') === $s ? 'selected' : '' ?>>
-                    <?= $s ?>
-                </option>
+            <option value="<?= $s ?>" <?= ($res['status'] ?? '') === $s ? 'selected' : '' ?>>
+                <?= $s ?>
+            </option>
             <?php endforeach; ?>
         </select>
     </div>
@@ -61,10 +61,10 @@ if ($id > 0) {
     <div class="form-actions">
         <button type="submit" class="btn-save">Update</button>
         <button type="button" class="btn-delete"
-                onclick="if(confirm('Delete this reservation?')) window.location='backend_delete.php?id=<?= $id ?>'">
+            onclick="if(confirm('Delete this reservation?')) window.location='backend_delete.php?id=<?= $id ?>'">
             Delete
         </button>
-        <button type="button" class="btn-cancel" onclick="window.parent.postMessage('close','*')">Cancel</button>
+        <button type="button" class="btn-cancel" onclick="history.back()">Cancel</button>
     </div>
 
 </form>

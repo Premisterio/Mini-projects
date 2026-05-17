@@ -1,8 +1,8 @@
 <?php
-define('DB_HOST', 'sql311.byetcluster.com');
-define('DB_NAME', 'your_db_name');
-define('DB_USER', 'your_db_user');
-define('DB_PASS', 'your_db_password');
+define('DB_HOST', 'sql311.infinityfree.com');
+define('DB_NAME', 'if0_41948527_lab8');
+define('DB_USER', 'if0_41948527');
+define('DB_PASS', 'jWpbdRsQhWfLx');
 
 try {
     $pdo = new PDO(
