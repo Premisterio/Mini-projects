@@ -1,0 +1,128 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d0f14 0%, #1a1e28 100%);
+    color: #e8e6df;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    padding: 20px;
+}
+
+.game {
+    background: #13161e;
+    border: 1px solid #252a38;
+    padding: 40px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 24px;
+    color: #c8f542;
+    letter-spacing: 0.02em;
+}
+
+.status {
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: #1a1e28;
+    border: 1px solid #252a38;
+    border-left: 3px solid #c8f542;
+}
+
+.status-end {
+    border-left-color: #4af0c4;
+    color: #4af0c4;
+    font-weight: 600;
+}
+
+.scoreboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #252a38;
+    margin-bottom: 24px;
+}
+
+.score {
+    background: #1a1e28;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    color: #6b7080;
+}
+
+.score strong {
+    font-size: 18px;
+    color: #e8e6df;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    aspect-ratio: 1;
+    background: #1a1e28;
+    border: 1px solid #252a38;
+    color: #e8e6df;
+    font-size: 48px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    font-family: inherit;
+}
+
+.cell:hover:not(:disabled) {
+    background: #252a38;
+    border-color: #c8f542;
+}
+
+.cell:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.cell:disabled {
+    cursor: not-allowed;
+}
+
+.cell-x { color: #c8f542; }
+.cell-o { color: #4af0c4; }
+
+.reset-btn {
+    background: #c8f542;
+    color: #0d0f14;
+    border: none;
+    padding: 12px 32px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    font-family: inherit;
+}
+
+.reset-btn:hover {
+    background: #d8ff55;
+    transform: translateY(-1px);
+}
+
+footer {
+    margin-top: 24px;
+    font-size: 11px;
+    color: #6b7080;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
