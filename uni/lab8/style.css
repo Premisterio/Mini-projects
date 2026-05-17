@@ -1,0 +1,167 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+    color: #222;
+    min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.app-header {
+    background: #1a1f36;
+    color: #fff;
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+}
+.logo span { color: #60a5fa; }
+
+.header-nav { display: flex; gap: 20px; flex: 1; }
+.header-nav a {
+    color: rgba(255,255,255,.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color .2s;
+}
+.header-nav a:hover { color: #fff; }
+
+.header-status { font-size: 12px; }
+.header-status.ok  { color: #4ade80; }
+.header-status.err { color: #f87171; }
+
+/* ── LAYOUT ── */
+.container {
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1a1f36;
+}
+.coming-soon {
+    font-size: 13px;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+/* ── ALERT ── */
+.alert-box {
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+    color: #991b1b;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* ── FILTER ── */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #475569;
+}
+.filter-bar select {
+    padding: 6px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* ── ROOMS GRID ── */
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+.room-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 18px 16px;
+    border-left: 4px solid #94a3b8;
+    transition: box-shadow .2s, transform .2s;
+}
+.room-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,.1);
+    transform: translateY(-2px);
+}
+
+/* Статус кімнати — кольоровий лівий бордер */
+.room-card.status-ready    { border-left-color: #4ade80; }
+.room-card.status-cleaning { border-left-color: #facc15; }
+.room-card.status-dirty    { border-left-color: #f87171; }
+
+.room-name {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+.room-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #64748b;
+}
+.room-status {
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: #f1f5f9;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* ── RESERVATIONS PLACEHOLDER ── */
+#reservations {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 32px;
+}
+.muted { color: #94a3b8; font-size: 14px; }
+.empty { color: #94a3b8; font-size: 14px; grid-column: 1/-1; }
+
+/* ── FOOTER ── */
+.app-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+    margin-top: auto;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+    .header-nav { display: none; }
+    .rooms-grid { grid-template-columns: 1fr 1fr; }
+}
