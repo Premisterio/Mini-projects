@@ -10,7 +10,7 @@
 
     <h2>New Reservation</h2>
 
-    <input type="hidden" name="room_id"    value="<?= htmlspecialchars($_GET['room_id']   ?? '') ?>">
+    <input type="hidden" name="room_id"    value="<?= htmlspecialchars($_GET['room_id']    ?? '') ?>">
     <input type="hidden" name="start_date" value="<?= htmlspecialchars($_GET['start_date'] ?? '') ?>">
     <input type="hidden" name="end_date"   value="<?= htmlspecialchars($_GET['end_date']   ?? '') ?>">
 
@@ -21,25 +21,25 @@
 
     <div class="form-row">
         <div class="form-group">
-            <label>Start Date</label>
-            <input type="date" name="start_date_visible"
-                   value="<?= htmlspecialchars($_GET['start_date'] ?? '') ?>" readonly>
+            <label>Check-in</label>
+            <input type="date" name="start_date_v"
+                   value="<?= htmlspecialchars($_GET['start_date'] ?? date('Y-m-d')) ?>" readonly>
         </div>
         <div class="form-group">
-            <label>End Date</label>
-            <input type="date" name="end_date_visible"
-                   value="<?= htmlspecialchars($_GET['end_date'] ?? '') ?>" readonly>
+            <label>Check-out</label>
+            <input type="date" name="end_date_v"
+                   value="<?= htmlspecialchars($_GET['end_date'] ?? date('Y-m-d', strtotime('+1 day'))) ?>" readonly>
         </div>
     </div>
 
     <div class="form-group">
         <label for="note">Note</label>
-        <textarea id="note" name="note" rows="3" placeholder="Optional note"></textarea>
+        <textarea id="note" name="note" rows="3" placeholder="Optional"></textarea>
     </div>
 
     <div class="form-actions">
         <button type="submit" class="btn-save">Save</button>
-        <button type="button" class="btn-cancel" onclick="window.parent.postMessage('close','*')">Cancel</button>
+        <button type="button" class="btn-cancel" onclick="history.back()">Cancel</button>
     </div>
 
 </form>
