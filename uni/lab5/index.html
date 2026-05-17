@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Володимир Грегуль — Bootstrap Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container-fluid px-lg-5">
+    <a class="navbar-brand fst-italic" href="#">Володимир <span class="text-accent">Грегуль</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#about">Про мене</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Навички</a></li>
+        <li class="nav-item"><a class="nav-link" href="#video">Відео</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Проєкти</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Контакти</a></li>
+      </ul>
+      <a class="btn btn-accent" href="#contact">Написати мені</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero py-5">
+  <div class="container py-lg-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7" data-aos="fade-right">
+        <span class="hero-tag d-inline-block mb-3">Full-Stack Developer · Відкритий до роботи</span>
+        <h1 class="hero-title mb-4">Будую продукти, які <em>працюють</em> і виглядають добре</h1>
+        <p class="hero-subtitle mb-4">Full-stack розробник із досвідом у React, TypeScript та Python. Навчаюся в магістратурі в Іспанії за програмою Erasmus+.</p>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span class="badge stack-tag stack-tag-hi">React</span>
+          <span class="badge stack-tag stack-tag-hi">TypeScript</span>
+          <span class="badge stack-tag stack-tag-hi">Python</span>
+          <span class="badge stack-tag">Node.js</span>
+          <span class="badge stack-tag">FastAPI</span>
+          <span class="badge stack-tag">Docker</span>
+          <span class="badge stack-tag">PostgreSQL</span>
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="#contact" class="btn btn-accent"><i class="bi bi-file-earmark-text me-1"></i> Резюме</a>
+          <a href="#contact" class="btn btn-outline-light"><i class="bi bi-envelope me-1"></i> Написати</a>
+        </div>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="card bg-surface border-secondary-subtle p-3">
+          <div class="ratio ratio-1x1 mb-3 photo-box">
+            <img src="photo.png" alt="Володимир Грегуль" class="hero-photo">
+          </div>
+          <div class="row g-2 text-start">
+            <div class="col-6">
+              <div class="mini-card">
+                <div class="mini-card-label">Досвід</div>
+                <div class="mini-card-value">1+ рік</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mini-card">
+                <div class="mini-card-label">Проєктів</div>
+                <div class="mini-card-value">5+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="py-5">
+  <div class="container py-lg-4">
+    <div class="section-header mb-5" data-aos="fade-up">
+      <span class="section-num">01 //</span>
+      <h2 class="section-title d-inline-block ms-2">Про мене</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <p>Привіт! Я <strong>Володимир Грегуль</strong> — junior full-stack розробник із України, зараз навчаюся в магістратурі за програмою <strong>Erasmus+</strong> у Cartagena, Іспанія.</p>
+        <p>Мій основний стек — <strong>React і TypeScript</strong> на фронтенді, <strong>Python з FastAPI</strong> на бекенді. Я будував реальні застосунки з нуля: від архітектури до деплою через Docker.</p>
+        <p>Маю досвід стажування у <strong>TechMagic</strong>. Люблю чистий код і продукти, якими приємно користуватися.</p>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <ul class="list-group list-group-flush facts-list">
+          <li class="list-group-item d-flex justify-content-between"><span class="fact-label">Університет</span><span>UPCT, Іспанія</span></li>
+          <li class="list-group-item d-flex justify-content-between"><span class="fact-label">Рівень</span><span>Магістратура</span></li>
+          <li class="list-group-item d-flex justify-content-between"><span class="fact-label">Стажування</span><span class="text-accent">TechMagic</span></li>
+          <li class="list-group-item d-flex justify-content-between"><span class="fact-label">Локація</span><span>Cartagena, Іспанія</span></li>
+          <li class="list-group-item d-flex justify-content-between"><span class="fact-label">Формат</span><span>Remote / Hybrid</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="py-5 bg-surface">
+  <div class="container py-lg-4">
+    <div class="section-header mb-5" data-aos="fade-up">
+      <span class="section-num">02 //</span>
+      <h2 class="section-title d-inline-block ms-2">Навички</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="0">
+        <div class="skills-card h-100">
+          <h3 class="skills-card-title">Frontend</h3>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between"><span>React</span><span class="text-muted">75%</span></div>
+            <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between"><span>TypeScript</span><span class="text-muted">45%</span></div>
+            <div class="progress"><div class="progress-bar" style="width:45%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between"><span>CSS / SCSS</span><span class="text-muted">85%</span></div>
+            <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="150">
+        <div class="skills-card h-100">
+          <h3 class="skills-card-title">Backend</h3>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between"><span>Python</span><span class="text-muted">50%</span></div>
+            <div class="progress"><div class="progress-bar" style="width:50%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between"><span>FastAPI</span><span class="text-muted">70%</span></div>
+            <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between"><span>PostgreSQL</span><span class="text-muted">65%</span></div>
+            <div class="progress"><div class="progress-bar" style="width:65%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="skills-card h-100">
+          <h3 class="skills-card-title">Tools</h3>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between"><span>Docker</span><span class="text-muted">60%</span></div>
+            <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between"><span>Git / GitHub</span><span class="text-muted">100%</span></div>
+            <div class="progress"><div class="progress-bar" style="width:100%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="d-flex justify-content-between"><span>REST API</span><span class="text-muted">75%</span></div>
+            <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="video" class="py-5">
+  <div class="container py-lg-4">
+    <div class="section-header mb-5" data-aos="fade-up">
+      <span class="section-num">03 //</span>
+      <h2 class="section-title d-inline-block ms-2">Що я зараз вивчаю</h2>
+    </div>
+    <div class="row justify-content-center" data-aos="fade-up">
+      <div class="col-lg-9">
+        <div class="ratio ratio-16x9 video-frame">
+          <iframe src="https://www.youtube.com/embed/Z1RJmh_OqeA" title="Bootstrap 5 Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="text-center text-muted mt-3 small">Майстер-клас по Bootstrap 5, який допоміг у виконанні цієї лабораторної</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="py-5 bg-surface">
+  <div class="container py-lg-4">
+    <div class="section-header mb-5" data-aos="fade-up">
+      <span class="section-num">04 //</span>
+      <h2 class="section-title d-inline-block ms-2">Проєкти</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="flip-up" data-aos-delay="0">
+        <article class="card project-card h-100">
+          <div class="project-img"><code>const ws = new WebSocket(url)</code></div>
+          <div class="card-body">
+            <div class="project-num">// ПРОЄКТ 01</div>
+            <h3 class="project-title">Месенджер у реальному часі</h3>
+            <p class="project-desc">Чат із вебсокетами, JWT-авторизацією, завантаженням файлів. Деплой через Docker.</p>
+            <div class="project-tags">
+              <span class="badge stack-tag">React</span>
+              <span class="badge stack-tag">FastAPI</span>
+              <span class="badge stack-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="flip-up" data-aos-delay="150">
+        <article class="card project-card h-100">
+          <div class="project-img"><code>GET /api/books</code></div>
+          <div class="card-body">
+            <div class="project-num">// ПРОЄКТ 02</div>
+            <h3 class="project-title">Система оренди книг</h3>
+            <p class="project-desc">Бібліотечна система з Angular-фронтендом та Node.js REST API. Swagger, MongoDB.</p>
+            <div class="project-tags">
+              <span class="badge stack-tag">Angular</span>
+              <span class="badge stack-tag">Node.js</span>
+              <span class="badge stack-tag">MongoDB</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="flip-up" data-aos-delay="300">
+        <article class="card project-card h-100">
+          <div class="project-img"><code>setInterval(tick, 1000)</code></div>
+          <div class="card-body">
+            <div class="project-num">// ПРОЄКТ 03</div>
+            <h3 class="project-title">FreeCodeCamp проєкти</h3>
+            <p class="project-desc">Серія frontend-застосунків: таймер Помодоро, калькулятор, квізи. Сертифікати FCC.</p>
+            <div class="project-tags">
+              <span class="badge stack-tag">React</span>
+              <span class="badge stack-tag">JavaScript</span>
+              <span class="badge stack-tag">Bootstrap</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-5">
+  <div class="container py-lg-4">
+    <div class="section-header mb-5" data-aos="fade-up">
+      <span class="section-num">05 //</span>
+      <h2 class="section-title d-inline-block ms-2">Зв'яжіться зі мною</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="status-badge mb-3 d-inline-flex"><span class="dot"></span> Відкритий до пропозицій</span>
+        <h3 class="contact-headline mb-3">Є цікавий проєкт або <em>вакансія?</em></h3>
+        <p class="text-muted mb-4">Пишіть — відповідаю протягом доби.</p>
+        <form>
+          <div class="mb-3">
+            <label for="nm" class="form-label small text-uppercase">Ім'я</label>
+            <input type="text" class="form-control" id="nm" placeholder="Ім'я та прізвище">
+          </div>
+          <div class="mb-3">
+            <label for="em" class="form-label small text-uppercase">Email</label>
+            <input type="email" class="form-control" id="em" placeholder="your@email.com">
+          </div>
+          <div class="mb-3">
+            <label for="ms" class="form-label small text-uppercase">Повідомлення</label>
+            <textarea class="form-control" id="ms" rows="4" placeholder="Розкажіть про проєкт..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent"><i class="bi bi-send me-1"></i> Надіслати</button>
+        </form>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="d-flex flex-column gap-3">
+          <a href="mailto:hrehulvolodymyr@gmail.com" class="contact-link">
+            <i class="bi bi-envelope-fill"></i>
+            <div>
+              <div class="small text-uppercase text-muted">Email</div>
+              <div>hrehulvolodymyr@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/volodymyr-hrehul/" class="contact-link" target="_blank" rel="noopener">
+            <i class="bi bi-linkedin"></i>
+            <div>
+              <div class="small text-uppercase text-muted">LinkedIn</div>
+              <div>linkedin.com/in/hrehul</div>
+            </div>
+          </a>
+          <a href="https://github.com/Premisterio" class="contact-link" target="_blank" rel="noopener">
+            <i class="bi bi-github"></i>
+            <div>
+              <div class="small text-uppercase text-muted">GitHub</div>
+              <div>github.com/Premisterio</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-4 border-top border-secondary-subtle">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+    <div class="text-muted small">© 2026 Володимир Грегуль</div>
+    <div class="text-accent small d-flex align-items-center gap-2"><span class="dot"></span> Open to work</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true, offset: 80 });
+</script>
+</body>
+</html>
