@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #1a1a3a 0%, #000000 100%);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+}
+
+h1 {
+    padding: 20px;
+    font-size: 24px;
+    color: #ffd700;
+}
+
+.space {
+    width: 500px;
+    height: 500px;
+    margin: 30px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orbit {
+    width: 400px;
+    height: 400px;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.earth {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 30% 30%, #4a90e2, #1a4d8f, #0d2a4f);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 30px rgba(74, 144, 226, 0.6);
+    animation: earth-rotation 10s linear infinite;
+}
+
+.moon-orbit {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -125px;
+    border-radius: 50%;
+    animation: moon-rotation 6s linear infinite;
+}
+
+.moon {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #cccccc, #888888);
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    margin-left: -15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.info {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+@keyframes earth-rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes moon-rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
